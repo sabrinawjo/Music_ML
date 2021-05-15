@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>PopTarts Data</title>
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" 
+	integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" 
+	crossorigin="anonymous">	
+
+	<link rel="stylesheet" href="../static/css/style.css">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark transparent" id="nav1">
+		<div class="container-fluid">
+		  <a class="navbar-brand" href="index.html">
+			<a class="navbar-brand" href="index.html">
+				<img src="../Images/popTart.png" alt="" width="30" height="24">
+				Musical Attribute Analysis 
+				</a>
+		  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+			<ul class="navbar-nav ms-auto">
+			  <li class="nav-item">
+				<a class="nav-link " aria-current="page" href="index.html">Home</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link active" href="data.html">API</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="observations.html">Summary</a>
+			  </li>
+			  <li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+				  Plots
+				</a>
+				<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+				  <li><a class="dropdown-item" href="multiLine.html">Year vs Attributes</a></li>
+				  <li><a class="dropdown-item" href="scatter.html">Genre Scatter Plot</a></li>
+				  <li><a class="dropdown-item" href="radar.html">Artist Radar Chart</a></li>
+				</ul>
+			  </li>
+			</ul>
+		  </div>
+		</div>
+	  </nav>
+	  <br>
+	  
+
+</head>
+<body>
+	<div class="container">
+		<!-- <div class="card">
+			<div class="card-body"> -->
+			<div class="row">
+				<div class="col align-self-center">
+					<div class="jumbotron">
+					
+						<h1 class="display-4">Data & API</h1>
+						<p class="lead"></p>
+						<p>This project is based on a Spotify dataset available on Kaggle.com
+							<ul><li><a href="https://www.kaggle.com/yamaerenay/spotify-dataset-19212020-160k-tracks">Spotify Dataset 1922-2021, ~600k Tracks</a></li></ul>
+						</p>
+						<p>Data from these sources were used to construct tables in a SQLite database.  Using the Python libraries sqlalchemy and Flask, data can be called from the 
+							SQLite database via the API at <a href="https://zmyd1nzqug.execute-api.us-west-1.amazonaws.com/dev">https://zmyd1nzqug.execute-api.us-west-1.amazonaws.com/dev</a> 
+							using the routes below.
+						</p>
+						<h2 class="display-5">API Routes</h2>
+						<p class="lead">Data by Year - <a href="https://zmyd1nzqug.execute-api.us-west-1.amazonaws.com/dev/api/v1.0/data_by_year">/api/v1.0/data_by_year</a></p>
+						<p>Averaged attributes for tracks by year. 1920-2021 (102 rows of data)</p>
+						<p class="lead">Data by Top Genres - <a href="https://zmyd1nzqug.execute-api.us-west-1.amazonaws.com/dev/api/v1.0/top_51_genres">/api/v1.0/top_51_genres</a></p>
+						<p>Averaged attributes for genres. 51 genres of data (51 rows)</p>
+						<p class="lead">Data by Artist - <a href="https://zmyd1nzqug.execute-api.us-west-1.amazonaws.com/dev/api/v1.0/data_by_artist_clean/The B-52's">/api/v1.0/data_by_artist_clean/&lt;artist&gt;</a></p>
+						<p>Artists data can be requested from the api by adding an artist name to the end of the API url.  Mind the capitalization and punctuation!  <br>
+							28,680 Artists (28,680 rows of data, one artist returned per API request).<br>
+							Here are some of our favorites as examples:
+							<ul>
+								<li><a href="https://zmyd1nzqug.execute-api.us-west-1.amazonaws.com/dev/api/v1.0/data_by_artist_clean/James Taylor">/api/v1.0/data_by_artist_clean/James Taylor</a></li>
+								<li><a href="https://zmyd1nzqug.execute-api.us-west-1.amazonaws.com/dev/api/v1.0/data_by_artist_clean/Foo Fighters">/api/v1.0/data_by_artist_clean/Foo Fighters</a></li>
+								<li><a href="https://zmyd1nzqug.execute-api.us-west-1.amazonaws.com/dev/api/v1.0/data_by_artist_clean/Paramore">/api/v1.0/data_by_artist_clean/Paramore</a></li>
+								<li><a href="https://zmyd1nzqug.execute-api.us-west-1.amazonaws.com/dev/api/v1.0/data_by_artist_clean/Thirty Seconds To Mars">/api/v1.0/data_by_artist_clean/Thirty Seconds To Mars</a></li>
+								<li><a href="https://zmyd1nzqug.execute-api.us-west-1.amazonaws.com/dev/api/v1.0/data_by_artist_clean/The B-52's">/api/v1.0/data_by_artist_clean/The B-52's</a></li>
+							</ul>
+						</p>
+						<h2 class ="display-5">statistics.js</h2>
+						<p>This project uses the <a href="https://thisancog.github.io/statistics.js/index.html">statistics.js</a> JavaScript library to calculate the correlation 
+						coefficients on the <a href="multiLine.html">Year vs Attribute</a> and <a href="scatter.html">Genre Scatter Plot</a> pages.</p>
+						<!-- <hr class="my-4">
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti dignissimos temporibus similique quam delectus animi debitis commodi, esse non odit eius vel illo veritatis tenetur quas voluptatibus sint eos dolorum. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum doloremque deleniti perspiciatis minima id aperiam provident corrupti est atque, hic impedit facere sapiente mollitia magnam aliquam ex. Animi, atque rem.</p> -->
+					
+					</div>
+			
+				</div>
+			</div>
+			
+			
+			<!-- </div>
+		</div> -->
+
+	</div>
+
+	<script src="https://d3js.org/d3.v5.min.js"></script>
+	<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+	<script type="text/javascript" src="../static/js/app.js"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+
+	<!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
+</body>
+</html>
