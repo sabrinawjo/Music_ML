@@ -1,6 +1,7 @@
 from flask_cors import CORS
 import json
 from flask import Flask, jsonify
+import boto3
 
 # Python SQL toolkit and Object Relational Mapper
 import sqlalchemy
@@ -8,7 +9,18 @@ from sqlalchemy.orm import Session
 # from sqlalchemy import create_engine, func, inspect
 from sqlalchemy import create_engine
 from sqlalchemy import Column, Integer, String, Float
+dynamo_client = boto3.Session(region_name='us-west-1').client('dynamodb')
 
+def get_item_Music_ML3(track):
+    table='Music_ML3'
+    name=track
+    response = dynamo_client.get_item(
+    Key={
+        'name': {'S': name}
+    }, 
+    TableName=table  #could pass this value in as well to manage multiple tables
+    )
+    return response
 # Create engine
 engine = create_engine("sqlite:///musicData.sqlite")
 
@@ -33,6 +45,7 @@ def homepage():
     f"/api/v1.0/data_w_genres <br/>"
     f"/api/v1.0/top_51_genres <br/>"
     f"/api/v1.0/data_w_genres_o <br/>"
+    f"/api/v2.0/Music_ML_tracks/&lt;track&gt; <br/>"
   )
 
 @app.route("/api/v1.0/data")
@@ -161,6 +174,11 @@ def data_w_genres_o():
   dataWithGenresOJSON = json.dumps([dict(r) for r in dataWithGenresO])
 
   return dataWithGenresOJSON
+
+@app.route("/api/v2.0/Music_ML_tracks/<track>")
+def get_track_data(track):
+  return   jsonify(get_item_Music_ML3(track))
+
 
 if __name__ == '__main__':
     app.run(debug=True)
