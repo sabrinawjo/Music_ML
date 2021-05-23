@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <title>Bully Bean</title>
+ 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
+</head>
+
+
+
+<body>
+    
+
+<div class="container">
+    <div class="row row-cols-auto justify-content-md-center">
+        <div class="col my-auto">
+  
+  
+  
+          <select id="selDataset1" class="form-select" aria-label="Default select example">
+              <option onclick="show('')">All</option>
+              <option onclick="show('0')">Cluster 0</option>
+              <option onclick="show('1')">Cluster 1</option>
+              <option onclick="show('2')">Cluster 2</option>
+              <option onclick="show('3')">Cluster 3</option>
+              <option onclick="show('4')">Cluster 4</option>
+              <option onclick="show('5')">Cluster 5</option>
+              <option onclick="show('6')">Cluster 6</option>
+              <option onclick="show('7')">Cluster 7</option>
+              <option onclick="show('8')">Cluster 8</option>
+              <option onclick="show('9')">Cluster 9</option>
+            </select>
+  
+  
+  
+  
+  
+          <!-- <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                Dropdown button
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" href="#" onclick="show('')">All</a></li>
+                <li><a class="dropdown-item" href="#" onclick="show('0')">0</a></li>
+                <li><a class="dropdown-item" href="#" onclick="show('1')">1</a></li>
+                <li><a class="dropdown-item" href="#" onclick="show('2')">2</a></li>
+              </ul>
+            </div> -->
+          <!-- <ul class="dropdown-menu">
+              <li><a onclick="show('Assignments','0')">0</a></li>
+              <li><a onclick="show('Assignments','1')">1</a></li>
+              <li><a onclick="show('Assignments','2')">2</a></li>
+          </ul> -->
+  
+          </div>
+      </div>
+  </div>
+    <div class="row row-cols-auto justify-content-md-center">
+      <div class="col my-auto">
+
+
+            <div id='myViz'>
+
+            </div>
+        </div>
+    </div>
+    
+
+
+
+</body>
+
+
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script type='text/javascript' src='test.js'></script>
+
+
+</html>
