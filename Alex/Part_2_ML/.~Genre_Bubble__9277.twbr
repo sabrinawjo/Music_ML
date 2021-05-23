@@ -1,0 +1,1448 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20211.21.0420.1112                               -->
+<workbook source-build='2021.1.1 (20211.21.0420.1112)' source-platform='mac' version='18.1' xml:base='https://public.tableau.com' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelExtractV2.true...ObjectModelExtractV2 />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <_.fcp.SetMembershipControl.true...SetMembershipControl />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <repository-location id='Genre_Bubble' path='/workbooks' revision='1.4' />
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <style>
+    <_.fcp.MarkAnimation.true...style-rule element='animation'>
+      <format attr='animation-on' value='ao-on' />
+      <format attr='animation-duration' value='2' />
+    </_.fcp.MarkAnimation.true...style-rule>
+  </style>
+  <datasources>
+    <datasource caption='count_grouped_genre' inline='true' name='federated.0bav0761sjd2i81gxeoc800s2jxf' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='count_grouped_genre' name='textscan.111gdiu0fl3gxt1dferau0klo18w'>
+            <connection class='textscan' directory='/Users/Alexander/DataClass/Music_ML/Resources/MLResources' filename='count_grouped_genre.csv' password='' server='' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='textscan.111gdiu0fl3gxt1dferau0klo18w' name='count_grouped_genre.csv' table='[count_grouped_genre#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='integer' name='Assignments' ordinal='0' />
+            <column datatype='string' name='genres' ordinal='1' />
+            <column datatype='integer' name='id_artists' ordinal='2' />
+            <column datatype='integer' name='id' ordinal='3' />
+            <column datatype='integer' name='name' ordinal='4' />
+            <column datatype='integer' name='popularity' ordinal='5' />
+            <column datatype='integer' name='duration_ms' ordinal='6' />
+            <column datatype='integer' name='explicit' ordinal='7' />
+            <column datatype='integer' name='artists' ordinal='8' />
+            <column datatype='integer' name='release_date' ordinal='9' />
+            <column datatype='integer' name='danceability' ordinal='10' />
+            <column datatype='integer' name='energy' ordinal='11' />
+            <column datatype='integer' name='key' ordinal='12' />
+            <column datatype='integer' name='loudness' ordinal='13' />
+            <column datatype='integer' name='mode' ordinal='14' />
+            <column datatype='integer' name='speechiness' ordinal='15' />
+            <column datatype='integer' name='acousticness' ordinal='16' />
+            <column datatype='integer' name='instrumentalness' ordinal='17' />
+            <column datatype='integer' name='liveness' ordinal='18' />
+            <column datatype='integer' name='valence' ordinal='19' />
+            <column datatype='integer' name='tempo' ordinal='20' />
+            <column datatype='integer' name='time_signature' ordinal='21' />
+            <column datatype='integer' name='loudness_scale' ordinal='22' />
+            <column datatype='integer' name='tempo_scale' ordinal='23' />
+            <column datatype='integer' name='duration_scale' ordinal='24' />
+            <column datatype='integer' name='popularity_scale' ordinal='25' />
+            <column datatype='integer' name='duration_min' ordinal='26' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='textscan.111gdiu0fl3gxt1dferau0klo18w' name='count_grouped_genre.csv' table='[count_grouped_genre#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='integer' name='Assignments' ordinal='0' />
+            <column datatype='string' name='genres' ordinal='1' />
+            <column datatype='integer' name='id_artists' ordinal='2' />
+            <column datatype='integer' name='id' ordinal='3' />
+            <column datatype='integer' name='name' ordinal='4' />
+            <column datatype='integer' name='popularity' ordinal='5' />
+            <column datatype='integer' name='duration_ms' ordinal='6' />
+            <column datatype='integer' name='explicit' ordinal='7' />
+            <column datatype='integer' name='artists' ordinal='8' />
+            <column datatype='integer' name='release_date' ordinal='9' />
+            <column datatype='integer' name='danceability' ordinal='10' />
+            <column datatype='integer' name='energy' ordinal='11' />
+            <column datatype='integer' name='key' ordinal='12' />
+            <column datatype='integer' name='loudness' ordinal='13' />
+            <column datatype='integer' name='mode' ordinal='14' />
+            <column datatype='integer' name='speechiness' ordinal='15' />
+            <column datatype='integer' name='acousticness' ordinal='16' />
+            <column datatype='integer' name='instrumentalness' ordinal='17' />
+            <column datatype='integer' name='liveness' ordinal='18' />
+            <column datatype='integer' name='valence' ordinal='19' />
+            <column datatype='integer' name='tempo' ordinal='20' />
+            <column datatype='integer' name='time_signature' ordinal='21' />
+            <column datatype='integer' name='loudness_scale' ordinal='22' />
+            <column datatype='integer' name='tempo_scale' ordinal='23' />
+            <column datatype='integer' name='duration_scale' ordinal='24' />
+            <column datatype='integer' name='popularity_scale' ordinal='25' />
+            <column datatype='integer' name='duration_min' ordinal='26' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[count_grouped_genre.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Assignments</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Assignments]</local-name>
+            <parent-name>[count_grouped_genre.csv]</parent-name>
+            <remote-alias>Assignments</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[count_grouped_genre.csv_D2576814FCB84D2AA0BB4CA585B28372]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>genres</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[genres]</local-name>
+            <parent-name>[count_grouped_genre.csv]</parent-name>
+            <remote-alias>genres</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[count_grouped_genre.csv_D2576814FCB84D2AA0BB4CA585B28372]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>id_artists</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[id_artists]</local-name>
+            <parent-name>[count_grouped_genre.csv]</parent-name>
+            <remote-alias>id_artists</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[count_grouped_genre.csv_D2576814FCB84D2AA0BB4CA585B28372]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[id]</local-name>
+            <parent-name>[count_grouped_genre.csv]</parent-name>
+            <remote-alias>id</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[count_grouped_genre.csv_D2576814FCB84D2AA0BB4CA585B28372]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>name</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[name]</local-name>
+            <parent-name>[count_grouped_genre.csv]</parent-name>
+            <remote-alias>name</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[count_grouped_genre.csv_D2576814FCB84D2AA0BB4CA585B28372]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>popularity</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[popularity]</local-name>
+            <parent-name>[count_grouped_genre.csv]</parent-name>
+            <remote-alias>popularity</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[count_grouped_genre.csv_D2576814FCB84D2AA0BB4CA585B28372]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>duration_ms</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[duration_ms]</local-name>
+            <parent-name>[count_grouped_genre.csv]</parent-name>
+            <remote-alias>duration_ms</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[count_grouped_genre.csv_D2576814FCB84D2AA0BB4CA585B28372]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>explicit</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[explicit]</local-name>
+            <parent-name>[count_grouped_genre.csv]</parent-name>
+            <remote-alias>explicit</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[count_grouped_genre.csv_D2576814FCB84D2AA0BB4CA585B28372]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>artists</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[artists]</local-name>
+            <parent-name>[count_grouped_genre.csv]</parent-name>
+            <remote-alias>artists</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[count_grouped_genre.csv_D2576814FCB84D2AA0BB4CA585B28372]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>release_date</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[release_date]</local-name>
+            <parent-name>[count_grouped_genre.csv]</parent-name>
+            <remote-alias>release_date</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[count_grouped_genre.csv_D2576814FCB84D2AA0BB4CA585B28372]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>danceability</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[danceability]</local-name>
+            <parent-name>[count_grouped_genre.csv]</parent-name>
+            <remote-alias>danceability</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[count_grouped_genre.csv_D2576814FCB84D2AA0BB4CA585B28372]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>energy</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[energy]</local-name>
+            <parent-name>[count_grouped_genre.csv]</parent-name>
+            <remote-alias>energy</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[count_grouped_genre.csv_D2576814FCB84D2AA0BB4CA585B28372]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>key</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[key]</local-name>
+            <parent-name>[count_grouped_genre.csv]</parent-name>
+            <remote-alias>key</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[count_grouped_genre.csv_D2576814FCB84D2AA0BB4CA585B28372]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>loudness</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[loudness]</local-name>
+            <parent-name>[count_grouped_genre.csv]</parent-name>
+            <remote-alias>loudness</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[count_grouped_genre.csv_D2576814FCB84D2AA0BB4CA585B28372]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>mode</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[mode]</local-name>
+            <parent-name>[count_grouped_genre.csv]</parent-name>
+            <remote-alias>mode</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[count_grouped_genre.csv_D2576814FCB84D2AA0BB4CA585B28372]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>speechiness</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[speechiness]</local-name>
+            <parent-name>[count_grouped_genre.csv]</parent-name>
+            <remote-alias>speechiness</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[count_grouped_genre.csv_D2576814FCB84D2AA0BB4CA585B28372]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>acousticness</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[acousticness]</local-name>
+            <parent-name>[count_grouped_genre.csv]</parent-name>
+            <remote-alias>acousticness</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[count_grouped_genre.csv_D2576814FCB84D2AA0BB4CA585B28372]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>instrumentalness</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[instrumentalness]</local-name>
+            <parent-name>[count_grouped_genre.csv]</parent-name>
+            <remote-alias>instrumentalness</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[count_grouped_genre.csv_D2576814FCB84D2AA0BB4CA585B28372]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>liveness</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[liveness]</local-name>
+            <parent-name>[count_grouped_genre.csv]</parent-name>
+            <remote-alias>liveness</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[count_grouped_genre.csv_D2576814FCB84D2AA0BB4CA585B28372]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>valence</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[valence]</local-name>
+            <parent-name>[count_grouped_genre.csv]</parent-name>
+            <remote-alias>valence</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[count_grouped_genre.csv_D2576814FCB84D2AA0BB4CA585B28372]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>tempo</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[tempo]</local-name>
+            <parent-name>[count_grouped_genre.csv]</parent-name>
+            <remote-alias>tempo</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[count_grouped_genre.csv_D2576814FCB84D2AA0BB4CA585B28372]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>time_signature</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[time_signature]</local-name>
+            <parent-name>[count_grouped_genre.csv]</parent-name>
+            <remote-alias>time_signature</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[count_grouped_genre.csv_D2576814FCB84D2AA0BB4CA585B28372]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>loudness_scale</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[loudness_scale]</local-name>
+            <parent-name>[count_grouped_genre.csv]</parent-name>
+            <remote-alias>loudness_scale</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[count_grouped_genre.csv_D2576814FCB84D2AA0BB4CA585B28372]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>tempo_scale</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[tempo_scale]</local-name>
+            <parent-name>[count_grouped_genre.csv]</parent-name>
+            <remote-alias>tempo_scale</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[count_grouped_genre.csv_D2576814FCB84D2AA0BB4CA585B28372]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>duration_scale</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[duration_scale]</local-name>
+            <parent-name>[count_grouped_genre.csv]</parent-name>
+            <remote-alias>duration_scale</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[count_grouped_genre.csv_D2576814FCB84D2AA0BB4CA585B28372]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>popularity_scale</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[popularity_scale]</local-name>
+            <parent-name>[count_grouped_genre.csv]</parent-name>
+            <remote-alias>popularity_scale</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[count_grouped_genre.csv_D2576814FCB84D2AA0BB4CA585B28372]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>duration_min</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[duration_min]</local-name>
+            <parent-name>[count_grouped_genre.csv]</parent-name>
+            <remote-alias>duration_min</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[count_grouped_genre.csv_D2576814FCB84D2AA0BB4CA585B28372]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column aggregation='Sum' datatype='integer' name='[Assignments]' role='dimension' type='ordinal' />
+      <column caption='Index' datatype='integer' name='[Calculation_98727393209507840]' role='measure' type='ordinal'>
+        <calculation class='tableau' formula='INDEX()'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <_.fcp.ObjectModelTableType.true...column caption='count_grouped_genre.csv' datatype='table' name='[__tableau_internal_object_id__].[count_grouped_genre.csv_D2576814FCB84D2AA0BB4CA585B28372]' role='measure' type='quantitative' />
+      <column caption='Acousticness' datatype='integer' name='[acousticness]' role='measure' type='quantitative' />
+      <column caption='Artists' datatype='integer' name='[artists]' role='measure' type='quantitative' />
+      <column caption='Danceability' datatype='integer' name='[danceability]' role='measure' type='quantitative' />
+      <column caption='Duration Min' datatype='integer' name='[duration_min]' role='measure' type='quantitative' />
+      <column caption='Duration Ms' datatype='integer' name='[duration_ms]' role='measure' type='quantitative' />
+      <column caption='Duration Scale' datatype='integer' name='[duration_scale]' role='measure' type='quantitative' />
+      <column caption='Energy' datatype='integer' name='[energy]' role='measure' type='quantitative' />
+      <column caption='Explicit' datatype='integer' name='[explicit]' role='measure' type='quantitative' />
+      <column caption='Genres' datatype='string' name='[genres]' role='dimension' type='nominal' />
+      <column caption='Id' datatype='integer' name='[id]' role='dimension' type='ordinal' />
+      <column caption='Id Artists' datatype='integer' name='[id_artists]' role='dimension' type='ordinal' />
+      <column caption='Instrumentalness' datatype='integer' name='[instrumentalness]' role='measure' type='quantitative' />
+      <column caption='Key' datatype='integer' name='[key]' role='dimension' type='ordinal' />
+      <column caption='Liveness' datatype='integer' name='[liveness]' role='measure' type='quantitative' />
+      <column caption='Loudness' datatype='integer' name='[loudness]' role='measure' type='quantitative' />
+      <column caption='Loudness Scale' datatype='integer' name='[loudness_scale]' role='measure' type='quantitative' />
+      <column caption='Mode' datatype='integer' name='[mode]' role='measure' type='quantitative' />
+      <column caption='Name' datatype='integer' name='[name]' role='measure' type='quantitative' />
+      <column caption='Popularity' datatype='integer' name='[popularity]' role='measure' type='quantitative' />
+      <column caption='Popularity Scale' datatype='integer' name='[popularity_scale]' role='measure' type='quantitative' />
+      <column caption='Release Date' datatype='integer' name='[release_date]' role='measure' type='quantitative' />
+      <column caption='Speechiness' datatype='integer' name='[speechiness]' role='measure' type='quantitative' />
+      <column caption='Tempo' datatype='integer' name='[tempo]' role='measure' type='quantitative' />
+      <column caption='Tempo Scale' datatype='integer' name='[tempo_scale]' role='measure' type='quantitative' />
+      <column caption='Time Signature' datatype='integer' name='[time_signature]' role='measure' type='quantitative' />
+      <column caption='Valence' datatype='integer' name='[valence]' role='measure' type='quantitative' />
+      <column-instance column='[Assignments]' derivation='None' name='[none:Assignments:ok]' pivot='key' type='ordinal' />
+      <column-instance column='[genres]' derivation='None' name='[none:genres:nk]' pivot='key' type='nominal' />
+      <extract _.fcp.ObjectModelExtractV2.true...object-id='' count='-1' enabled='true' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='/Users/Alexander/Documents/My Tableau Repository/Datasources/count_grouped_genre.hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='' username='tableau_internal_user'>
+          <_.fcp.ObjectModelEncapsulateLegacy.false...relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <_.fcp.ObjectModelEncapsulateLegacy.true...relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>Assignments</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Assignments]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Assignments</remote-alias>
+              <ordinal>0</ordinal>
+              <family>count_grouped_genre.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>10</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>genres</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[genres]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>genres</remote-alias>
+              <ordinal>1</ordinal>
+              <family>count_grouped_genre.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>5506</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>id_artists</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[id_artists]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>id_artists</remote-alias>
+              <ordinal>2</ordinal>
+              <family>count_grouped_genre.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>761</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>id</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[id]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>id</remote-alias>
+              <ordinal>3</ordinal>
+              <family>count_grouped_genre.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>761</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>name</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[name]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>name</remote-alias>
+              <ordinal>4</ordinal>
+              <family>count_grouped_genre.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>747</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>popularity</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[popularity]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>popularity</remote-alias>
+              <ordinal>5</ordinal>
+              <family>count_grouped_genre.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>761</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>duration_ms</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[duration_ms]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>duration_ms</remote-alias>
+              <ordinal>6</ordinal>
+              <family>count_grouped_genre.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>761</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>explicit</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[explicit]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>explicit</remote-alias>
+              <ordinal>7</ordinal>
+              <family>count_grouped_genre.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>761</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>artists</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[artists]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>artists</remote-alias>
+              <ordinal>8</ordinal>
+              <family>count_grouped_genre.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>761</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>release_date</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[release_date]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>release_date</remote-alias>
+              <ordinal>9</ordinal>
+              <family>count_grouped_genre.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>761</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>danceability</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[danceability]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>danceability</remote-alias>
+              <ordinal>10</ordinal>
+              <family>count_grouped_genre.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>761</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>energy</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[energy]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>energy</remote-alias>
+              <ordinal>11</ordinal>
+              <family>count_grouped_genre.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>761</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>key</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[key]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>key</remote-alias>
+              <ordinal>12</ordinal>
+              <family>count_grouped_genre.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>761</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>loudness</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[loudness]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>loudness</remote-alias>
+              <ordinal>13</ordinal>
+              <family>count_grouped_genre.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>761</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>mode</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[mode]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>mode</remote-alias>
+              <ordinal>14</ordinal>
+              <family>count_grouped_genre.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>761</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>speechiness</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[speechiness]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>speechiness</remote-alias>
+              <ordinal>15</ordinal>
+              <family>count_grouped_genre.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>761</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>acousticness</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[acousticness]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>acousticness</remote-alias>
+              <ordinal>16</ordinal>
+              <family>count_grouped_genre.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>761</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>instrumentalness</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[instrumentalness]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>instrumentalness</remote-alias>
+              <ordinal>17</ordinal>
+              <family>count_grouped_genre.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>761</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>liveness</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[liveness]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>liveness</remote-alias>
+              <ordinal>18</ordinal>
+              <family>count_grouped_genre.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>761</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>valence</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[valence]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>valence</remote-alias>
+              <ordinal>19</ordinal>
+              <family>count_grouped_genre.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>761</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>tempo</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[tempo]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>tempo</remote-alias>
+              <ordinal>20</ordinal>
+              <family>count_grouped_genre.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>761</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>time_signature</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[time_signature]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>time_signature</remote-alias>
+              <ordinal>21</ordinal>
+              <family>count_grouped_genre.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>761</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>loudness_scale</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[loudness_scale]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>loudness_scale</remote-alias>
+              <ordinal>22</ordinal>
+              <family>count_grouped_genre.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>761</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>tempo_scale</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[tempo_scale]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>tempo_scale</remote-alias>
+              <ordinal>23</ordinal>
+              <family>count_grouped_genre.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>761</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>duration_scale</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[duration_scale]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>duration_scale</remote-alias>
+              <ordinal>24</ordinal>
+              <family>count_grouped_genre.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>761</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>popularity_scale</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[popularity_scale]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>popularity_scale</remote-alias>
+              <ordinal>25</ordinal>
+              <family>count_grouped_genre.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>761</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>duration_min</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[duration_min]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>duration_min</remote-alias>
+              <ordinal>26</ordinal>
+              <family>count_grouped_genre.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>761</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:Assignments:ok]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>3</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>7</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:genres:nk]' palette='tableau20_10_0' type='palette'>
+            <map to='#499894'>
+              <bucket>&quot;big band&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;hoerspiel&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;pop dance&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;adult standards&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;album rock&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;disney horspiele&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;orchestra&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;barnalog&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;filmi&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;hard rock&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;progressive house&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;late romantic era&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;soft rock&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;brill building pop&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;jazz&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;rock&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;rock en espanol&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;barnasogur&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;folk rock&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;j-pop&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;progressive trance&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;swing&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;mpb&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;trance&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;alternative metal&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;early romantic era&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;orchestral performance&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;sufi&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;uplifting trance&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;barnsagor&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;classical piano&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;mellow gold&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;barnmusik&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;metal&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;psychedelic rock&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;classical&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;sertanejo universitario&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;classical era&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;latin pop&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;soul&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;cool jazz&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;vocal jazz&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;desi pop&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;trap latino&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;c-pop&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;kindermusik&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;salsa&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;tropical&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;opera&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;pop&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;classic rock&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;easy listening&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;reading&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;vintage tango&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;classical performance&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;lounge&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;stride&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;classic bollywood&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;kleine hoerspiel&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;sertanejo&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;art rock&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;dance pop&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;edm&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;latin&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='count_grouped_genre.csv' id='count_grouped_genre.csv_D2576814FCB84D2AA0BB4CA585B28372'>
+            <properties context=''>
+              <relation connection='textscan.111gdiu0fl3gxt1dferau0klo18w' name='count_grouped_genre.csv' table='[count_grouped_genre#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='integer' name='Assignments' ordinal='0' />
+                  <column datatype='string' name='genres' ordinal='1' />
+                  <column datatype='integer' name='id_artists' ordinal='2' />
+                  <column datatype='integer' name='id' ordinal='3' />
+                  <column datatype='integer' name='name' ordinal='4' />
+                  <column datatype='integer' name='popularity' ordinal='5' />
+                  <column datatype='integer' name='duration_ms' ordinal='6' />
+                  <column datatype='integer' name='explicit' ordinal='7' />
+                  <column datatype='integer' name='artists' ordinal='8' />
+                  <column datatype='integer' name='release_date' ordinal='9' />
+                  <column datatype='integer' name='danceability' ordinal='10' />
+                  <column datatype='integer' name='energy' ordinal='11' />
+                  <column datatype='integer' name='key' ordinal='12' />
+                  <column datatype='integer' name='loudness' ordinal='13' />
+                  <column datatype='integer' name='mode' ordinal='14' />
+                  <column datatype='integer' name='speechiness' ordinal='15' />
+                  <column datatype='integer' name='acousticness' ordinal='16' />
+                  <column datatype='integer' name='instrumentalness' ordinal='17' />
+                  <column datatype='integer' name='liveness' ordinal='18' />
+                  <column datatype='integer' name='valence' ordinal='19' />
+                  <column datatype='integer' name='tempo' ordinal='20' />
+                  <column datatype='integer' name='time_signature' ordinal='21' />
+                  <column datatype='integer' name='loudness_scale' ordinal='22' />
+                  <column datatype='integer' name='tempo_scale' ordinal='23' />
+                  <column datatype='integer' name='duration_scale' ordinal='24' />
+                  <column datatype='integer' name='popularity_scale' ordinal='25' />
+                  <column datatype='integer' name='duration_min' ordinal='26' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontsize='22'>Cluster &lt;</run>
+            <run bold='true' fontsize='22'>[federated.0bav0761sjd2i81gxeoc800s2jxf].[none:Assignments:ok]</run>
+            <run bold='true' fontsize='22'>&gt;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='count_grouped_genre' name='federated.0bav0761sjd2i81gxeoc800s2jxf' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0bav0761sjd2i81gxeoc800s2jxf'>
+            <column aggregation='Sum' datatype='integer' name='[Assignments]' role='dimension' type='ordinal' />
+            <column caption='Index' datatype='integer' name='[Calculation_98727393209507840]' role='measure' type='ordinal'>
+              <calculation class='tableau' formula='INDEX()'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='Energy' datatype='integer' name='[energy]' role='measure' type='quantitative' />
+            <column caption='Genres' datatype='string' name='[genres]' role='dimension' type='nominal' />
+            <column-instance column='[Assignments]' derivation='None' name='[none:Assignments:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[genres]' derivation='None' name='[none:genres:nk]' pivot='key' type='nominal' />
+            <column-instance column='[energy]' derivation='Sum' name='[sum:energy:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_98727393209507840]' derivation='User' name='[usr:Calculation_98727393209507840:ok:6]' pivot='key' type='ordinal'>
+              <table-calc level-break='[federated.0bav0761sjd2i81gxeoc800s2jxf].[none:genres:nk]' ordering-type='Field'>
+                <order field='[federated.0bav0761sjd2i81gxeoc800s2jxf].[none:Assignments:ok]' />
+                <order field='[federated.0bav0761sjd2i81gxeoc800s2jxf].[none:genres:nk]' />
+                <sort direction='DESC' using='[federated.0bav0761sjd2i81gxeoc800s2jxf].[sum:energy:qk]' />
+              </table-calc>
+            </column-instance>
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0bav0761sjd2i81gxeoc800s2jxf].[none:Assignments:ok]'>
+            <groupfilter function='member' level='[none:Assignments:ok]' member='7' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0bav0761sjd2i81gxeoc800s2jxf].[usr:Calculation_98727393209507840:ok:6]'>
+            <groupfilter function='union' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[usr:Calculation_98727393209507840:ok:6]' member='1' />
+              <groupfilter function='member' level='[usr:Calculation_98727393209507840:ok:6]' member='2' />
+              <groupfilter function='member' level='[usr:Calculation_98727393209507840:ok:6]' member='3' />
+              <groupfilter function='member' level='[usr:Calculation_98727393209507840:ok:6]' member='4' />
+              <groupfilter function='member' level='[usr:Calculation_98727393209507840:ok:6]' member='5' />
+              <groupfilter function='member' level='[usr:Calculation_98727393209507840:ok:6]' member='6' />
+              <groupfilter function='member' level='[usr:Calculation_98727393209507840:ok:6]' member='7' />
+              <groupfilter function='member' level='[usr:Calculation_98727393209507840:ok:6]' member='8' />
+              <groupfilter function='member' level='[usr:Calculation_98727393209507840:ok:6]' member='9' />
+              <groupfilter function='member' level='[usr:Calculation_98727393209507840:ok:6]' member='10' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.0bav0761sjd2i81gxeoc800s2jxf].[none:Assignments:ok]</column>
+            <column>[federated.0bav0761sjd2i81gxeoc800s2jxf].[usr:Calculation_98727393209507840:ok:6]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' value='817' />
+            <format attr='height' field='[federated.0bav0761sjd2i81gxeoc800s2jxf].[none:Assignments:ok]' value='742' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='display' field='[federated.0bav0761sjd2i81gxeoc800s2jxf].[none:Assignments:ok]' value='false' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='font-size' value='11' />
+            <format attr='font-weight' value='bold' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Pie' />
+            <encodings>
+              <color column='[federated.0bav0761sjd2i81gxeoc800s2jxf].[none:genres:nk]' />
+              <wedge-size column='[federated.0bav0761sjd2i81gxeoc800s2jxf].[sum:energy:qk]' />
+              <size column='[federated.0bav0761sjd2i81gxeoc800s2jxf].[sum:energy:qk]' />
+              <text column='[federated.0bav0761sjd2i81gxeoc800s2jxf].[none:genres:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0bav0761sjd2i81gxeoc800s2jxf].[none:Assignments:ok]</rows>
+        <cols />
+      </table>
+      <simple-id uuid='{77791608-5156-4180-93D9-371B4D25E6D5}' />
+    </worksheet>
+    <worksheet name='Sheet 1 (2)'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontsize='22'>Cluster &lt;</run>
+            <run bold='true' fontsize='22'>[federated.0bav0761sjd2i81gxeoc800s2jxf].[none:Assignments:ok]</run>
+            <run bold='true' fontsize='22'>&gt;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='count_grouped_genre' name='federated.0bav0761sjd2i81gxeoc800s2jxf' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0bav0761sjd2i81gxeoc800s2jxf'>
+            <column aggregation='Sum' datatype='integer' name='[Assignments]' role='dimension' type='ordinal' />
+            <column caption='Index' datatype='integer' name='[Calculation_98727393209507840]' role='measure' type='ordinal'>
+              <calculation class='tableau' formula='INDEX()'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='Energy' datatype='integer' name='[energy]' role='measure' type='quantitative' />
+            <column caption='Genres' datatype='string' name='[genres]' role='dimension' type='nominal' />
+            <column-instance column='[Assignments]' derivation='None' name='[none:Assignments:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[genres]' derivation='None' name='[none:genres:nk]' pivot='key' type='nominal' />
+            <column-instance column='[energy]' derivation='Sum' name='[sum:energy:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_98727393209507840]' derivation='User' name='[usr:Calculation_98727393209507840:ok:6]' pivot='key' type='ordinal'>
+              <table-calc level-break='[federated.0bav0761sjd2i81gxeoc800s2jxf].[none:genres:nk]' ordering-type='Field'>
+                <order field='[federated.0bav0761sjd2i81gxeoc800s2jxf].[none:Assignments:ok]' />
+                <order field='[federated.0bav0761sjd2i81gxeoc800s2jxf].[none:genres:nk]' />
+                <sort direction='DESC' using='[federated.0bav0761sjd2i81gxeoc800s2jxf].[sum:energy:qk]' />
+              </table-calc>
+            </column-instance>
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0bav0761sjd2i81gxeoc800s2jxf].[none:Assignments:ok]'>
+            <groupfilter function='member' level='[none:Assignments:ok]' member='0' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0bav0761sjd2i81gxeoc800s2jxf].[usr:Calculation_98727393209507840:ok:6]'>
+            <groupfilter function='union' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[usr:Calculation_98727393209507840:ok:6]' member='1' />
+              <groupfilter function='member' level='[usr:Calculation_98727393209507840:ok:6]' member='2' />
+              <groupfilter function='member' level='[usr:Calculation_98727393209507840:ok:6]' member='3' />
+              <groupfilter function='member' level='[usr:Calculation_98727393209507840:ok:6]' member='4' />
+              <groupfilter function='member' level='[usr:Calculation_98727393209507840:ok:6]' member='5' />
+              <groupfilter function='member' level='[usr:Calculation_98727393209507840:ok:6]' member='6' />
+              <groupfilter function='member' level='[usr:Calculation_98727393209507840:ok:6]' member='7' />
+              <groupfilter function='member' level='[usr:Calculation_98727393209507840:ok:6]' member='8' />
+              <groupfilter function='member' level='[usr:Calculation_98727393209507840:ok:6]' member='9' />
+              <groupfilter function='member' level='[usr:Calculation_98727393209507840:ok:6]' member='10' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.0bav0761sjd2i81gxeoc800s2jxf].[none:Assignments:ok]</column>
+            <column>[federated.0bav0761sjd2i81gxeoc800s2jxf].[usr:Calculation_98727393209507840:ok:6]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' value='817' />
+            <format attr='height' field='[federated.0bav0761sjd2i81gxeoc800s2jxf].[none:Assignments:ok]' value='742' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='display' field='[federated.0bav0761sjd2i81gxeoc800s2jxf].[none:Assignments:ok]' value='false' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='font-size' value='11' />
+            <format attr='font-weight' value='normal' />
+            <format attr='font-family' value='Tableau Semibold' />
+          </style-rule>
+          <style-rule element='quick-filter'>
+            <format attr='title' field='[federated.0bav0761sjd2i81gxeoc800s2jxf].[none:Assignments:ok]' value='Cluster'>
+              <formatted-text>
+                <run>Cluster</run>
+              </formatted-text>
+            </format>
+          </style-rule>
+          <_.fcp.MarkAnimation.true...style-rule element='animation'>
+            <format attr='animation-duration' value='2' />
+          </_.fcp.MarkAnimation.true...style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <encodings>
+              <color column='[federated.0bav0761sjd2i81gxeoc800s2jxf].[none:genres:nk]' />
+              <size column='[federated.0bav0761sjd2i81gxeoc800s2jxf].[sum:energy:qk]' />
+              <text column='[federated.0bav0761sjd2i81gxeoc800s2jxf].[none:genres:nk]' />
+              <lod column='[federated.0bav0761sjd2i81gxeoc800s2jxf].[sum:energy:qk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#787878'>Cluster: </run>
+                <run bold='true'><![CDATA[<[federated.0bav0761sjd2i81gxeoc800s2jxf].[none:Assignments:ok]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Genres: </run>
+                <run bold='true'><![CDATA[<[federated.0bav0761sjd2i81gxeoc800s2jxf].[none:genres:nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Count:&#9; </run>
+                <run bold='true'><![CDATA[<[federated.0bav0761sjd2i81gxeoc800s2jxf].[sum:energy:qk]>]]></run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-transparency' value='255' />
+                <format attr='has-stroke' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0bav0761sjd2i81gxeoc800s2jxf].[none:Assignments:ok]</rows>
+        <cols />
+      </table>
+      <simple-id uuid='{DCD0582B-42A3-46F9-91EC-0E3699DF6BDE}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard name='Dashboard 1'>
+      <style />
+      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <zones>
+        <zone _.fcp.SetMembershipControl.false...type='layout-basic' _.fcp.SetMembershipControl.true...type-v2='layout-basic' h='100000' id='4' w='100000' x='0' y='0'>
+          <zone _.fcp.SetMembershipControl.false...type='layout-flow' _.fcp.SetMembershipControl.true...type-v2='layout-flow' h='98000' id='7' param='horz' w='98400' x='800' y='1000'>
+            <zone _.fcp.SetMembershipControl.false...type='layout-basic' _.fcp.SetMembershipControl.true...type-v2='layout-basic' h='98000' id='5' w='98400' x='800' y='1000'>
+              <zone h='98000' id='3' name='Sheet 1 (2)' w='98400' x='800' y='1000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='700' minheight='700' sizing-mode='vscroll' />
+          <zones>
+            <zone _.fcp.SetMembershipControl.false...type='layout-basic' _.fcp.SetMembershipControl.true...type-v2='layout-basic' h='100000' id='12' w='100000' x='0' y='0'>
+              <zone _.fcp.SetMembershipControl.false...type='layout-flow' _.fcp.SetMembershipControl.true...type-v2='layout-flow' h='98000' id='11' param='vert' w='98400' x='800' y='1000'>
+                <zone fixed-size='280' h='98000' id='3' is-fixed='true' name='Sheet 1 (2)' w='82400' x='800' y='1000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{F9AB6601-C7E5-458E-AF9A-713DCC29752B}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='30'>
+    <window class='worksheet' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='slider' param='[federated.0bav0761sjd2i81gxeoc800s2jxf].[none:Assignments:ok]' type='filter' />
+            <card pane-specification-id='0' param='[federated.0bav0761sjd2i81gxeoc800s2jxf].[none:genres:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{401E8F44-C43D-47F4-A46E-280A5D05EF89}' />
+    </window>
+    <window class='worksheet' name='Sheet 1 (2)'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='slider' param='[federated.0bav0761sjd2i81gxeoc800s2jxf].[none:Assignments:ok]' show-all='false' type='filter' />
+            <card pane-specification-id='0' param='[federated.0bav0761sjd2i81gxeoc800s2jxf].[none:genres:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{65078D4C-49F6-4E69-8FF4-5257480E0657}' />
+    </window>
+    <window class='dashboard' maximized='true' name='Dashboard 1'>
+      <viewpoints>
+        <viewpoint name='Sheet 1 (2)'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{F08836B2-EDE1-4E73-A2D4-DC5D629828D8}' />
+    </window>
+  </windows>
+</workbook>
