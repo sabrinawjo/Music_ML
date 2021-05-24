@@ -1,6 +1,28 @@
-# Music Analysis with  ML
+# Music Analysis with ML
 
-### Previous Project Work
+This project uses machine learning to find common attributes in tracks from Spotify, beyond their artists or genre, and presents the results through interactive visualizations.
+
+Table of Contents
+- [Music Analysis with ML](#music-analysis-with-ml)
+  - [Repository Organization](#repository-organization)
+  - [Previous Project Work](#previous-project-work)
+    - [Music Attributes](#music-attributes)
+    - [Data Source](#data-source)
+  - [Machine Learning Methods](#machine-learning-methods)
+    - [Data Cleaning](#data-cleaning)
+    - [ML Model](#ml-model)
+  - [API](#api)
+    - [v1.0/](#v10)
+    - [v2.0/](#v20)
+  - [ML Visualizations](#ml-visualizations)
+  - [Observations](#observations)
+  - [Potential Evolution](#potential-evolution)
+  - [Our Team](#our-team)
+
+## Repository Organization
+Files used for the final deployent of 
+
+## Previous Project Work
 This project is based on work done in the [Musical Attribute Analysis Project](https://github.com/alexdanieldelcampo/Musical_Analysis), which takes a dataset of Spotify music data summarized by year, genre, and artist and presents visualizations of the data.
 
 In this update, we are looking at relationships between songs of all genres as defined by their attributes, summarized below.
@@ -45,7 +67,6 @@ Prior to adding the data to the K-Means clustering model, we cleaned our data by
 A K-Means clustering model allows you to specify how many clusters you'd like to break your dataset into, and will return the input data with the assigned cluster number.  We determined that our dataset could be described in 10 clusters using the [Elbow Method](https://en.wikipedia.org/wiki/Elbow_method_(clustering)) (guide on implementation [here](https://towardsdatascience.com/k-means-clustering-algorithm-applications-evaluation-methods-and-drawbacks-aa03e644b48a)) to estimate how to effectively break the data into clusters, as shown below:
 
 
-
 ## API
 
 After data cleaning, the Spotify music data was compiled into databases.  Using Flask, Zappa, and SQLite and AWS DynamoDB databases, the API routes can be used to return JSON-format data to drive our visualizations.
@@ -74,4 +95,12 @@ The main API routes include:
   - When adding the track name at the end of the URL (replace "&lt;track&gt;" with the track name), please use the correct spelling, punctuation, capitalization, and spacing.  Note any accents or special characters.  Some tracks may have very specific names (Beyoncé sings "[Crazy in Love (feat. Jay-Z)](https://1whrq8dnsi.execute-api.us-west-1.amazonaws.com/dev/api/v2.0/Music_ML_tracks/Crazy%20in%20Love%20(feat.%20Jay-Z))", not to be confused with "[Crazy in Love](https://1whrq8dnsi.execute-api.us-west-1.amazonaws.com/dev/api/v2.0/Music_ML_tracks/Crazy%20in%20Love)").
 
 ## ML Visualizations
+
+Visualizations are built with Tableau and present the average values of the song attributes and the top genre labels in each cluster.  
+
+## Observations
+
+## Potential Evolution
+
+## Our Team
 
