@@ -20,7 +20,7 @@ Table of Contents
   - [Our Team](#our-team)
 
 ## Repository Organization
-Files used for the final deployent of 
+Files used for the final deployment of our project are saved in the Main folder.  Additional files in separate folders may have been used to aid our development of the application.
 
 ## Previous Project Work
 This project is based on work done in the [Musical Attribute Analysis Project](https://github.com/alexdanieldelcampo/Musical_Analysis), which takes a dataset of Spotify music data summarized by year, genre, and artist and presents visualizations of the data.
@@ -65,7 +65,7 @@ Prior to adding the data to the K-Means clustering model, we cleaned our data by
 
 ### ML Model
 A K-Means clustering model allows you to specify how many clusters you'd like to break your dataset into, and will return the input data with the assigned cluster number.  We determined that our dataset could be described in 10 clusters using the [Elbow Method](https://en.wikipedia.org/wiki/Elbow_method_(clustering)) (guide on implementation [here](https://towardsdatascience.com/k-means-clustering-algorithm-applications-evaluation-methods-and-drawbacks-aa03e644b48a)) to estimate how to effectively break the data into clusters, as shown below:
-
+![20-point Elbow Method plot](Alex/Part_2_ML/1-20elbow.png)
 
 ## API
 

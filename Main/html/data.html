@@ -75,26 +75,40 @@
 						<p>This project is based on a Spotify dataset available on Kaggle.com
 							<ul><li><a href="https://www.kaggle.com/yamaerenay/spotify-dataset-19212020-160k-tracks">Spotify Dataset 1922-2021, ~600k Tracks</a></li></ul>
 						</p>
-						<p>Data from these sources were used to construct tables in a SQLite database.  Using the Python libraries sqlalchemy and Flask, data can be called from the 
-							SQLite database via the API at <a href="https://zmyd1nzqug.execute-api.us-west-1.amazonaws.com/dev">https://zmyd1nzqug.execute-api.us-west-1.amazonaws.com/dev</a> 
+						<p>Data from these sources were used to construct tables in a SQLite database (v1.0) and DynamoDB tables(v2.0).  Using the Python libraries SQLAlchemy, Boto3, and Flask, data can be called from the 
+							SQLite database or DynamoDB tables via the API at <a href="https://1whrq8dnsi.execute-api.us-west-1.amazonaws.com/dev/">https://1whrq8dnsi.execute-api.us-west-1.amazonaws.com/dev/</a> 
 							using the routes below.
 						</p>
 						<h2 class="display-5">API Routes</h2>
-						<p class="lead">Data by Year - <a href="https://zmyd1nzqug.execute-api.us-west-1.amazonaws.com/dev/api/v1.0/data_by_year">/api/v1.0/data_by_year</a></p>
+						<h3 class="display-7">v1.0/</h3>
+						<p class="lead">Data by Year - <a href="https://1whrq8dnsi.execute-api.us-west-1.amazonaws.com/dev/api/v1.0/data_by_year">/api/v1.0/data_by_year</a></p>
 						<p>Averaged attributes for tracks by year. 1920-2021 (102 rows of data)</p>
-						<p class="lead">Data by Top Genres - <a href="https://zmyd1nzqug.execute-api.us-west-1.amazonaws.com/dev/api/v1.0/top_51_genres">/api/v1.0/top_51_genres</a></p>
+						<p class="lead">Data by Top Genres - <a href="https://1whrq8dnsi.execute-api.us-west-1.amazonaws.com/dev/api/v1.0/top_51_genres">/api/v1.0/top_51_genres</a></p>
 						<p>Averaged attributes for genres. 51 genres of data (51 rows)</p>
-						<p class="lead">Data by Artist - <a href="https://zmyd1nzqug.execute-api.us-west-1.amazonaws.com/dev/api/v1.0/data_by_artist_clean/The B-52's">/api/v1.0/data_by_artist_clean/&lt;artist&gt;</a></p>
-						<p>Artists data can be requested from the api by adding an artist name to the end of the API url.  Mind the capitalization and punctuation!  <br>
+						<p class="lead">Data by Artist - <a href="https://1whrq8dnsi.execute-api.us-west-1.amazonaws.com/dev/api/v1.0/data_by_artist_clean/The B-52's">/api/v1.0/data_by_artist_clean/&lt;artist&gt;</a></p>
+						<p>Artists data can be requested from the api by adding an artist name to the end of the API url.  <br>
+							Mind your spelling, capitalization, punctuation, and special characters!  <br>
 							28,680 Artists (28,680 rows of data, one artist returned per API request).<br>
 							Here are some of our favorites as examples:
 							<ul>
-								<li><a href="https://zmyd1nzqug.execute-api.us-west-1.amazonaws.com/dev/api/v1.0/data_by_artist_clean/James Taylor">/api/v1.0/data_by_artist_clean/James Taylor</a></li>
-								<li><a href="https://zmyd1nzqug.execute-api.us-west-1.amazonaws.com/dev/api/v1.0/data_by_artist_clean/Foo Fighters">/api/v1.0/data_by_artist_clean/Foo Fighters</a></li>
-								<li><a href="https://zmyd1nzqug.execute-api.us-west-1.amazonaws.com/dev/api/v1.0/data_by_artist_clean/Paramore">/api/v1.0/data_by_artist_clean/Paramore</a></li>
-								<li><a href="https://zmyd1nzqug.execute-api.us-west-1.amazonaws.com/dev/api/v1.0/data_by_artist_clean/Thirty Seconds To Mars">/api/v1.0/data_by_artist_clean/Thirty Seconds To Mars</a></li>
-								<li><a href="https://zmyd1nzqug.execute-api.us-west-1.amazonaws.com/dev/api/v1.0/data_by_artist_clean/The B-52's">/api/v1.0/data_by_artist_clean/The B-52's</a></li>
+								<li><a href="https://1whrq8dnsi.execute-api.us-west-1.amazonaws.com/dev/api/v1.0/data_by_artist_clean/James Taylor">/api/v1.0/data_by_artist_clean/James Taylor</a></li>
+								<li><a href="https://1whrq8dnsi.execute-api.us-west-1.amazonaws.com/dev/api/v1.0/data_by_artist_clean/Foo Fighters">/api/v1.0/data_by_artist_clean/Foo Fighters</a></li>
+								<li><a href="https://1whrq8dnsi.execute-api.us-west-1.amazonaws.com/dev/api/v1.0/data_by_artist_clean/Paramore">/api/v1.0/data_by_artist_clean/Paramore</a></li>
+								<li><a href="https://1whrq8dnsi.execute-api.us-west-1.amazonaws.com/dev/api/v1.0/data_by_artist_clean/Thirty Seconds To Mars">/api/v1.0/data_by_artist_clean/Thirty Seconds To Mars</a></li>
+								<li><a href="https://1whrq8dnsi.execute-api.us-west-1.amazonaws.com/dev/api/v1.0/data_by_artist_clean/The B-52's">/api/v1.0/data_by_artist_clean/The B-52's</a></li>
 							</ul>
+						</p>
+						<h3 class="display-7">v2.0/</h3>
+						<p class="lead">Tracks with ML Cluster Assignments, Artists, and Genre lists - <a href="https://1whrq8dnsi.execute-api.us-west-1.amazonaws.com/dev/api/v2.0/Music_ML_tracks/All%20Star">/api/v2.0/Music_ML_tracks/&lt;track&gt;</a></p>
+						<p>Returns the specified track name with artists, genres, and ML classification group number for each combination of the track/artist.  <br>
+							Mind your spelling, capitalization, punctuation, and special characters!  <br>
+							408,953 Tracks (408,953 items in DynamoDB JSON table, one song returned per API request).<br>
+							Many tracks have similar names.  Here are some examples that bring different results:
+							<ul>
+								<li><a href="https://1whrq8dnsi.execute-api.us-west-1.amazonaws.com/dev/api/v2.0/Music_ML_tracks/Crazy in Love">/api/v2.0/Music_ML_tracks/Crazy in Love</a></li>
+								<li><a href="https://1whrq8dnsi.execute-api.us-west-1.amazonaws.com/dev/api/v2.0/Music_ML_tracks/Crazy in Love (feat. Jay-Z)">/api/v2.0/Music_ML_tracks/Crazy in Love (feat. Jay-Z)</a></li>
+							</ul>
+
 						</p>
 						<h2 class ="display-5">statistics.js</h2>
 						<p>This project uses the <a href="https://thisancog.github.io/statistics.js/index.html">statistics.js</a> JavaScript library to calculate the correlation 
