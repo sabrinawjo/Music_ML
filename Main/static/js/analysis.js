@@ -11,7 +11,7 @@ var options
 window.onload = function() {
 
  vizDiv = document.getElementById('myViz');
- vizURL = 'https://public.tableau.com/views/combined_cluster/combined'
+ vizURL = 'https://public.tableau.com/views/combined_cluster/combined?:language=en&:display_count=y&:origin=viz_share_link'
  options = {
     height: '850px',
     width: '1024px',
