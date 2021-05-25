@@ -71,17 +71,17 @@ A K-Means clustering model allows you to specify how many clusters you'd like to
 
 After data cleaning, the Spotify music data was compiled into databases.  Using Flask, Zappa, and SQLite and AWS DynamoDB databases, the API routes can be used to return JSON-format data to drive our visualizations.
 
-Full set of API routes available [here](https://1whrq8dnsi.execute-api.us-west-1.amazonaws.com/dev/).  The main API used in this project are described below.
+Full set of API routes available [here](https://nxvasw6as4.execute-api.us-west-1.amazonaws.com/dev/).  The main API used in this project are described below.
 
 ### v1.0/
 This version of the API was constructed by incoprorating cleaned data csv files into a SQLite database, and uploading that SQLite database file with the Zappa deployment to AWS.  Queries are handled in Python using SQLAlchemy.
 
 The main API routes include:
-- Data by Year - [/api/v1.0/data_by_year](https://1whrq8dnsi.execute-api.us-west-1.amazonaws.com/dev/api/v1.0/data_by_year)
+- Data by Year - [/api/v1.0/data_by_year](https://nxvasw6as4.execute-api.us-west-1.amazonaws.com/dev/api/v1.0/data_by_year)
   - Returns averaged attributes for tracks by year.  A total of 102 rows of data.
-- Data by Genre - [/api/v1.0/top_51_genres](https://1whrq8dnsi.execute-api.us-west-1.amazonaws.com/dev/api/v1.0/top_51_genres)
+- Data by Genre - [/api/v1.0/top_51_genres](https://nxvasw6as4.execute-api.us-west-1.amazonaws.com/dev/api/v1.0/top_51_genres)
   - Returns averaged attributes for tracks by genre.  A total of 51 rows of data.  List of top 51 genres determined by scraping popular music genres from Google.
-- Data by Artist - [/api/v1.0/data_by_artist_clean/&lt;artist&gt;](https://1whrq8dnsi.execute-api.us-west-1.amazonaws.com/dev/api/v1.0/data_by_artist_clean/The%20B-52's)
+- Data by Artist - [/api/v1.0/data_by_artist_clean/&lt;artist&gt;](https://nxvasw6as4.execute-api.us-west-1.amazonaws.com/dev/api/v1.0/data_by_artist_clean/The%20B-52's)
   - Returns averaged attributes for tracks for a single artist.  28,680 artists are available in the SQLite database.
   - When adding the artist name at the end of the URL (replace "&lt;artist&gt;" with your artist of interest), please use the correct spelling, punctuation, capitalization, and spacing.  Note any accents or special characters (she's Beyoncé, not Beyonce).
 
@@ -90,9 +90,9 @@ The main API routes include:
 This version of the API was constructed by creating JSONs of the data for each table which were uploaded to AWS DynamoDB.  Queries are handled in Python using boto3.
 
 The main API routes include:
-- Tracks with ML cluster assignments, artists, and genre lists -  [/api/v2.0/Music_ML_tracks/&lt;track&gt;](https://1whrq8dnsi.execute-api.us-west-1.amazonaws.com/dev/api/v2.0/Music_ML_tracks/All%20Star)
+- Tracks with ML cluster assignments, artists, and genre lists -  [/api/v2.0/Music_ML_tracks/&lt;track&gt;](https://nxvasw6as4.execute-api.us-west-1.amazonaws.com/dev/api/v2.0/Music_ML_tracks/All%20Star)
   - Returns a JSON object that contains the ML cluster assignment ("Assignments"), a list of artists that have made a song with this title ("artists"), a list of genre lists for each artist ("genres"), and a list of Spotify track IDs ("id") for a given track name.
-  - When adding the track name at the end of the URL (replace "&lt;track&gt;" with the track name), please use the correct spelling, punctuation, capitalization, and spacing.  Note any accents or special characters.  Some tracks may have very specific names (Beyoncé sings "[Crazy in Love (feat. Jay-Z)](https://1whrq8dnsi.execute-api.us-west-1.amazonaws.com/dev/api/v2.0/Music_ML_tracks/Crazy%20in%20Love%20(feat.%20Jay-Z))", not to be confused with "[Crazy in Love](https://1whrq8dnsi.execute-api.us-west-1.amazonaws.com/dev/api/v2.0/Music_ML_tracks/Crazy%20in%20Love)").
+  - When adding the track name at the end of the URL (replace "&lt;track&gt;" with the track name), please use the correct spelling, punctuation, capitalization, and spacing.  Note any accents or special characters.  Some tracks may have very specific names (Beyoncé sings "[Crazy in Love (feat. Jay-Z)](https://nxvasw6as4.execute-api.us-west-1.amazonaws.com/dev/api/v2.0/Music_ML_tracks/Crazy%20in%20Love%20(feat.%20Jay-Z))", not to be confused with "[Crazy in Love](https://nxvasw6as4.execute-api.us-west-1.amazonaws.com/dev/api/v2.0/Music_ML_tracks/Crazy%20in%20Love)").
 
 ## ML Visualizations
 
