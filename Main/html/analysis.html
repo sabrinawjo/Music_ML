@@ -7,7 +7,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
   <link rel="stylesheet" href="../static/css/analysis.css">
   <script type="text/javascript" src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
-
+  <link rel="stylesheet" href="../static/css/style.css">
 
 
 	<nav class="navbar navbar-expand-lg navbar-light bg-light transparent" id="nav1">
@@ -67,6 +67,40 @@
 
 	<body>
     
+<br>
+<div class='container'>
+
+		<div class="row">
+			<div class="col align-self-center">
+				<div class="jumbotron">
+				
+					<h1 class="display-5">Clustering Analysis</h1>
+					<hr/>
+					<p class="lead"> In order to better understand how our K-means model categorizes tracks and their attributes, Tableau was used to vizualize important characteristics of each cluster.
+						By using the dropdown, all 9 clusters can be selected and assessed in two dimensions simultaneously. On the left, a TreeMap is used to display the hierarchal arrangement of attribute averages in a given cluster. On the right, a bubble chart is used to exhibit the top 10 appearing genres in that cluster. 
+					</p>
+					<!-- <hr class="my-4">
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti dignissimos temporibus similique quam delectus animi debitis commodi, esse non odit eius vel illo veritatis tenetur quas voluptatibus sint eos dolorum. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum doloremque deleniti perspiciatis minima id aperiam provident corrupti est atque, hic impedit facere sapiente mollitia magnam aliquam ex. Animi, atque rem.</p> -->
+				
+				</div>
+		
+			</div>
+		</div>
+		
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	<div class="container">
 		<div class="row row-cols-auto justify-content-md-center">
@@ -74,7 +108,7 @@
 	  
 	  
 	  
-			  <select id="selDataset1" class="form-select" aria-label="Default select example">
+			  <select id="selDataset1" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
 				  <option onclick="show('')">All</option>
 				  <option onclick="show('0')">Cluster 0</option>
 				  <option onclick="show('1')">Cluster 1</option>
@@ -96,6 +130,9 @@
 			  </div>
 		  </div>
 	  </div>
+
+
+	  
 		<div class="row row-cols-auto justify-content-md-center">
 		  <div class="col my-auto">
 	
@@ -108,7 +145,7 @@
 		
 	
 	
-	
+
 	</body>
 	
 

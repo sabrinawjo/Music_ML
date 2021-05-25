@@ -13,7 +13,7 @@ window.onload = function() {
  vizDiv = document.getElementById('myViz');
  vizURL = 'https://public.tableau.com/views/combined_cluster/combined'
  options = {
-    height: '800px',
+    height: '850px',
     width: '1024px',
     hideToolbar: true,
     hideTabs: true
