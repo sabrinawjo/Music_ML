@@ -32,5 +32,6 @@ function show(value){
         viz.revertAllAsync();
      } else {
         sheet.applyFilterAsync("Assignments", value, tableau.FilterUpdateType.REPLACE);
+        console.log(value)
     }
 } 
