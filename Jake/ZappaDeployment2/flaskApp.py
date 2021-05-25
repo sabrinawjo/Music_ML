@@ -11,8 +11,8 @@ from sqlalchemy import create_engine
 from sqlalchemy import Column, Integer, String, Float
 dynamo_client = boto3.Session(region_name='us-west-1').client('dynamodb')
 
-def get_item_Music_ML3(track):
-    table='Music_ML3'
+def get_item_Music_ML3(table,track):
+    table=table
     name=track
     response = dynamo_client.get_item(
     Key={
@@ -32,56 +32,59 @@ CORS(app)
 def homepage():
   return(
     f"Available Routes: <br/>"
-    f"/api/v1.0/data <br/>"
-    f"/api/v1.0/data_popularity_over_80 <br/>"
-    f"/api/v1.0/data_o <br/>"
+    # f"/api/v1.0/data <br/>"
+    # f"/api/v1.0/data_popularity_over_80 <br/>"
+    # f"/api/v1.0/data_o <br/>"
     f"/api/v1.0/data_by_year <br/>"
-    f"/api/v1.0/data_by_year_o <br/>"
-    f"/api/v1.0/data_by_artist <br/>"
+    # f"/api/v1.0/data_by_year_o <br/>"
+    # f"/api/v1.0/data_by_artist <br/>"
     f"/api/v1.0/data_by_artist_clean/&lt;artist&gt; <br/>"
-    f"/api/v1.0/data_by_artist_o <br/>"
-    f"/api/v1.0/data_by_genres <br/>"
-    f"/api/v1.0/data_by_genres_o <br/>"
-    f"/api/v1.0/data_w_genres <br/>"
+    # f"/api/v1.0/data_by_artist_o <br/>"
+    # f"/api/v1.0/data_by_genres <br/>"
+    # f"/api/v1.0/data_by_genres_o <br/>"
+    # f"/api/v1.0/data_w_genres <br/>"
     f"/api/v1.0/top_51_genres <br/>"
-    f"/api/v1.0/data_w_genres_o <br/>"
+    # f"/api/v1.0/data_w_genres_o <br/>"
     f"/api/v2.0/Music_ML_tracks/&lt;track&gt; <br/>"
+    f"/api/v2.1/Music_ML_tracks/&lt;track&gt; <br/>"
+    f"/api/v2.1/Fixed_Song_Assignments/&lt;Assignments&gt; <br/>"
+    # f"/api/v2.1/Music_ML_Assignment_Name/A=&lt;Assignment&gt;&amp;N=&lt;Name&gt; <br/>"
   )
 
-@app.route("/api/v1.0/data")
-def data():
+# @app.route("/api/v1.0/data")
+# def data():
 
-  # Open Session
-  session = Session(bind=engine)
+#   # Open Session
+#   session = Session(bind=engine)
 
-  # Query all data from 'data' table
-  data = engine.execute("SELECT * from data")
+#   # Query all data from 'data' table
+#   data = engine.execute("SELECT * from data")
 
-  # Close Session
-  session.close()
+#   # Close Session
+#   session.close()
 
-  # Create dataJSON
-  dataJSON = json.dumps([dict(r) for r in data])
+#   # Create dataJSON
+#   dataJSON = json.dumps([dict(r) for r in data])
 
-  return dataJSON
+#   return dataJSON
 
-@app.route("/api/v1.0/data_popularity_over_80")
-def data_85():
-  session = Session(bind=engine)
-  data80 = engine.execute("SELECT * from data \
-    WHERE popularity >= 80")
-  session.close()
-  data80JSON = json.dumps([dict(r) for r in data80])
+# @app.route("/api/v1.0/data_popularity_over_80")
+# def data_85():
+#   session = Session(bind=engine)
+#   data80 = engine.execute("SELECT * from data \
+#     WHERE popularity >= 80")
+#   session.close()
+#   data80JSON = json.dumps([dict(r) for r in data80])
 
-  return data80JSON
-@app.route("/api/v1.0/data_o")
-def data_o():
-  session = Session(bind=engine)
-  dataO = engine.execute("SELECT * from data_o")
-  session.close()
-  dataOJSON = json.dumps([dict(r) for r in dataO])
+#   return data80JSON
+# @app.route("/api/v1.0/data_o")
+# def data_o():
+#   session = Session(bind=engine)
+#   dataO = engine.execute("SELECT * from data_o")
+#   session.close()
+#   dataOJSON = json.dumps([dict(r) for r in dataO])
 
-  return dataOJSON
+#   return dataOJSON
 
 @app.route("/api/v1.0/data_by_year")
 def data_by_year():
@@ -92,23 +95,23 @@ def data_by_year():
 
   return dataByYearJSON
 
-@app.route("/api/v1.0/data_by_year_o")
-def data_by_year_o():
-  session = Session(bind=engine)
-  dataByYearO = engine.execute("SELECT * from data_by_year_o")
-  session.close()
-  dataByYearOJSON = json.dumps([dict(r) for r in dataByYearO])
+# @app.route("/api/v1.0/data_by_year_o")
+# def data_by_year_o():
+#   session = Session(bind=engine)
+#   dataByYearO = engine.execute("SELECT * from data_by_year_o")
+#   session.close()
+#   dataByYearOJSON = json.dumps([dict(r) for r in dataByYearO])
 
-  return dataByYearOJSON
+#   return dataByYearOJSON
 
-@app.route("/api/v1.0/data_by_artist")
-def data_by_artist():
-  session=Session(bind=engine)  
-  dataByArtist = engine.execute("SELECT * from data_by_artist")
-  session.close()
-  dataByArtistJSON = json.dumps([dict(r) for r in dataByArtist])
+# @app.route("/api/v1.0/data_by_artist")
+# def data_by_artist():
+#   session=Session(bind=engine)  
+#   dataByArtist = engine.execute("SELECT * from data_by_artist")
+#   session.close()
+#   dataByArtistJSON = json.dumps([dict(r) for r in dataByArtist])
 
-  return dataByArtistJSON
+#   return dataByArtistJSON
 
 @app.route("/api/v1.0/data_by_artist_clean/<artist>")
 def data_by_artist_clean(artist):
@@ -121,41 +124,41 @@ def data_by_artist_clean(artist):
 
   return dataByArtistCleanJSON
 
-@app.route("/api/v1.0/data_by_artist_o")
-def data_by_artist_o():
-  session = Session(bind=engine)
-  dataByArtistO = engine.execute("SELECT * from data_by_artist_o")
-  session.close()
-  dataByArtistOJSON = json.dumps([dict(r) for r in dataByArtistO])
+# @app.route("/api/v1.0/data_by_artist_o")
+# def data_by_artist_o():
+#   session = Session(bind=engine)
+#   dataByArtistO = engine.execute("SELECT * from data_by_artist_o")
+#   session.close()
+#   dataByArtistOJSON = json.dumps([dict(r) for r in dataByArtistO])
 
-  return dataByArtistOJSON
+#   return dataByArtistOJSON
 
-@app.route("/api/v1.0/data_by_genres")
-def data_by_genres():
-  session = Session(bind=engine)
-  dataByGenres = engine.execute("SELECT * from data_by_genres")
-  session.close()
-  dataByGenresJSON = json.dumps([dict(r) for r in dataByGenres])
+# @app.route("/api/v1.0/data_by_genres")
+# def data_by_genres():
+#   session = Session(bind=engine)
+#   dataByGenres = engine.execute("SELECT * from data_by_genres")
+#   session.close()
+#   dataByGenresJSON = json.dumps([dict(r) for r in dataByGenres])
 
-  return dataByGenresJSON
+#   return dataByGenresJSON
 
-@app.route("/api/v1.0/data_by_genres_o")
-def data_by_genres_o():
-  session = Session(bind=engine)
-  dataByGenresO = engine.execute("SELECT * from data_by_genres_o")
-  session.close()
-  dataByGenresOJSON = json.dumps([dict(r) for r in dataByGenresO])
+# @app.route("/api/v1.0/data_by_genres_o")
+# def data_by_genres_o():
+#   session = Session(bind=engine)
+#   dataByGenresO = engine.execute("SELECT * from data_by_genres_o")
+#   session.close()
+#   dataByGenresOJSON = json.dumps([dict(r) for r in dataByGenresO])
 
-  return dataByGenresOJSON
+#   return dataByGenresOJSON
 
-@app.route("/api/v1.0/data_w_genres")
-def data_w_genres():
-  session = Session(bind=engine)
-  dataWithGenres = engine.execute("SELECT * from data_w_genres")
-  session.close()
-  dataWithGenresJSON = json.dumps([dict(r) for r in dataWithGenres])
+# @app.route("/api/v1.0/data_w_genres")
+# def data_w_genres():
+#   session = Session(bind=engine)
+#   dataWithGenres = engine.execute("SELECT * from data_w_genres")
+#   session.close()
+#   dataWithGenresJSON = json.dumps([dict(r) for r in dataWithGenres])
 
-  return dataWithGenresJSON
+#   return dataWithGenresJSON
 
 @app.route("/api/v1.0/top_51_genres")
 def data_top_51_genres():
@@ -166,19 +169,48 @@ def data_top_51_genres():
 
   return dataTop51GenresJSON
 
-@app.route("/api/v1.0/data_w_genres_o")
-def data_w_genres_o():
-  session = Session(bind=engine)
-  dataWithGenresO = engine.execute("SELECT * from data_w_genres_o")
-  session.close()
-  dataWithGenresOJSON = json.dumps([dict(r) for r in dataWithGenresO])
+# @app.route("/api/v1.0/data_w_genres_o")
+# def data_w_genres_o():
+#   session = Session(bind=engine)
+#   dataWithGenresO = engine.execute("SELECT * from data_w_genres_o")
+#   session.close()
+#   dataWithGenresOJSON = json.dumps([dict(r) for r in dataWithGenresO])
 
-  return dataWithGenresOJSON
+#   return dataWithGenresOJSON
 
 @app.route("/api/v2.0/Music_ML_tracks/<track>")
 def get_track_data(track):
-  return   jsonify(get_item_Music_ML3(track))
+  table = 'Music_ML3'
+  return   jsonify(get_item_Music_ML3(table,track))
 
+@app.route("/api/v2.1/Music_ML_tracks/<track>")
+def get_track_data_v2(track):
+  table = 'Music_ML_IDs'
+  return   jsonify(get_item_Music_ML3(table,track))
+
+# @app.route("/api/v2.1/Music_ML_Assignment_Name/A=<Assignment>&N=<Name>")
+# def get_by_Assignment_Name(Assignment, Name):
+#   table = 'Music_ML_AssignName'
+#   Assignment=Assignment
+#   Name=Name
+#   response = dynamo_client.get_item(
+#   Key={
+#       'name': {'S': name}
+#   }, 
+#   TableName=table  #could pass this value in as well to manage multiple tables
+#   )
+#   return response
+
+@app.route("/api/v2.1/Fixed_Song_Assignments/<Assignments>")
+def data_assignments_fixed(Assignments):
+  Assignments = Assignments
+  session=Session(bind=engine)  
+  dataAssignmentsFixed = engine.execute(f'SELECT * from fixed_song_combined \
+    WHERE Assignments = {int(Assignments)}')
+  session.close()
+  dataAssignmentsFixed = json.dumps([dict(r) for r in dataAssignmentsFixed])
+
+  return dataAssignmentsFixed
 
 if __name__ == '__main__':
     app.run(debug=True)
