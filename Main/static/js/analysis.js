@@ -20,18 +20,20 @@ function initViz() {
 };
 
 viz = new tableau.Viz(vizDiv, vizURL, options);
-
+console.log("initViz works")
 }
 initViz();
 
 
 function show(value){
     sheet = viz.getWorkbook().getActiveSheet()
-
+    console.log("show() activates")
     if (value === "") {
         viz.revertAllAsync();
      } else {
+        console.log("else works (beforeapplyFilter")
         sheet.applyFilterAsync("Assignments", value, tableau.FilterUpdateType.REPLACE);
-        console.log(value)
+        console.log("else works (after applyFilter")
     }
 } 
+console.log("Outside of functions work")
