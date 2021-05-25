@@ -8,7 +8,7 @@ var options
 
 
 
-window.onload = function() {
+function initViz() {
 
  vizDiv = document.getElementById('myViz');
  vizURL = 'https://public.tableau.com/views/Genre_Bubble/Dashboard1'
@@ -22,7 +22,7 @@ window.onload = function() {
 viz = new tableau.Viz(vizDiv, vizURL, options);
 
 }
-
+initViz();
 
 
 function show(value){
