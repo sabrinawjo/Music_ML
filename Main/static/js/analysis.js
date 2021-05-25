@@ -8,10 +8,10 @@ var options
 
 
 
-window.onload = function() {
+function initViz() {
 
  vizDiv = document.getElementById('myViz');
- vizURL = 'https://public.tableau.com/views/combined_cluster/combined?:language=en&:display_count=y&:origin=viz_share_link'
+ vizURL = 'https://public.tableau.com/views/combined_cluster/combined'
  options = {
     height: '850px',
     width: '1024px',
@@ -22,7 +22,7 @@ window.onload = function() {
 viz = new tableau.Viz(vizDiv, vizURL, options);
 
 }
-
+initViz();
 
 
 function show(value){
