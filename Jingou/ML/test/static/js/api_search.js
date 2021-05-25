@@ -60,30 +60,33 @@ function input(inputvalue, inputvalue2){
         
         // var artistsinput = d3.select("#artistinput")
         // var artistsinput = "Karel Gott"
+
+        // for (var i =0 ; i<showartists.length; i++){
+        //     if (showartists[i].S == inputvalue2){
+        //         console.log(showartists[i].S)
+        //         artists_key = i
+        //         console.log(data.Item.Assignments.L[i].N)
+        //         console.log(data.Item.genres.L[i].L)
+        //         } else {
+                    
+        //         }
+        //     }
+        // }
+
         for (var i =0 ; i<showartists.length; i++){
             if (showartists[i].S == inputvalue2){
-                console.log(showartists[i].S)
+                var detail1 = songinfo.append("div")
+                detail1.text(`Artist: ${showartists[i].S}`)
                 artists_key = i
-                console.log(data.Item.Assignments.L[i].N)
-                console.log(data.Item.genres.L[i].L)
+                var detail2 = songinfo.append("div")
+                detail2.text(`This song is in Cluster ${data.Item.Assignments.L[i].N}`)
                 } else {
                     
                 }
             }
         }
 
-        // var selectartists = data.Item.artists.L.S
-        // for (var a =0 ; a<showartists.length; a++){
-        //     if (showartists[a].S == selectartists){
-        //         var songdiv = songinfo.append("div")
-        //         songdiv.text(`Song's artist(s): ${filterartists[a].S}`)
-        //         artists_key = a
-        //         var songdiv = songinfo.append("div")
-        //         songdiv.text(`Song's cluster: ${data.Item.Assignments.L[a].N}`)
-        //         var songdiv = songinfo.append("div")
-        //         songdiv.text(`Song's genre(s): ${data.Item.genres.L[a].L}`)
-        //     }
-        // }
+        
     })
 };
 
