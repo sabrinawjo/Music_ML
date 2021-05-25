@@ -27,4 +27,9 @@
     height: 250px;
 } */
 
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
   
