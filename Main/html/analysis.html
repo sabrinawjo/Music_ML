@@ -108,8 +108,9 @@
 			<div class="col my-auto">
 	  
 	  
-	  
-			  <select id="selDataset1" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+					<!-- This code only worked on firefox -->
+
+			  <!-- <select id="selDataset1" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
 				  <option onclick="show('')">All</option>
 				  <option onclick="show('0')">Cluster 0</option>
 				  <option onclick="show('1')">Cluster 1</option>
@@ -121,8 +122,23 @@
 				  <option onclick="show('7')">Cluster 7</option>
 				  <option onclick="show('8')">Cluster 8</option>
 				  <option onclick="show('9')">Cluster 9</option>
-				</select>
-	  
+				</select> -->
+				
+				<!-- This bottom form-select is for non-firefox browsers -->
+
+				<select id="selDataset1" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" onchange="show(value);">
+					<option value="">All</option>
+					<option value="0">Cluster 0</option>
+					<option value="1">Cluster 1</option>
+					<option value="2">Cluster 2</option>
+					<option value="3">Cluster 3</option>
+					<option value="4">Cluster 4</option>
+					<option value="5">Cluster 5</option>
+					<option value="6">Cluster 6</option>
+					<option value="7">Cluster 7</option>
+					<option value="8">Cluster 8</option>
+					<option value="9">Cluster 9</option>
+				  </select>
 	  
 	  
 	  
