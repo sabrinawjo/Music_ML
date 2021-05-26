@@ -1,4 +1,5 @@
 url = "https://nxvasw6as4.execute-api.us-west-1.amazonaws.com/dev/api/v2.0/Music_ML_tracks/";
+clusterurl = "https://nxvasw6as4.execute-api.us-west-1.amazonaws.com/dev/api/v2.1/Random_Song_Assignments/"
 // path = "../../Resources/MLResources/full_Imploded.json"
 
 // var form = d3.select("form")
@@ -46,49 +47,51 @@ function input(inputvalue, inputvalue2){
         var showartists = data.Item.artists.L
         if (inputvalue2===""){
             var artistlist = songinfo.append("div")
-            artistlist.text("It seems like below artist(s) have this song, select one you want to see?")
+            artistlist.text("It seems like below artist(s) have this song, select one you want to see?").style("font-size","20px")
             for (var s=0; s<showartists.length; s++){
                 var artistlist = songinfo.append("div")
                 artistlist.text(showartists[s].S)
             };
         } else {
 
-        
-        songappend.text(`Search name: ${data.Item.name.S}`)
+            songappend.text(`Search name: ${data.Item.name.S}`);
+            
+            var detail1 = songinfo.append("div")
+            detail1.text(`Artist: ${showartists[0].S}`)
+            var detail2 = songinfo.append("div")
+            detail2.text(`This song is in Cluster ${data.Item.Assignments.L[0].N}`)
+            cluster_key = data.Item.Assignments.L[0].N
+            show(data.Item.Assignments.L[0].N)
 
-
-        
-        // var artistsinput = d3.select("#artistinput")
-        // var artistsinput = "Karel Gott"
-
-        // for (var i =0 ; i<showartists.length; i++){
-        //     if (showartists[i].S == inputvalue2){
-        //         console.log(showartists[i].S)
-        //         artists_key = i
-        //         console.log(data.Item.Assignments.L[i].N)
-        //         console.log(data.Item.genres.L[i].L)
-        //         } else {
-                    
-        //         }
-        //     }
-        // }
-
-        for (var i =0 ; i<showartists.length; i++){
-            if (showartists[i].S == inputvalue2){
-                var detail1 = songinfo.append("div")
-                detail1.text(`Artist: ${showartists[i].S}`)
-                artists_key = i
-                var detail2 = songinfo.append("div")
-                detail2.text(`This song is in Cluster ${data.Item.Assignments.L[i].N}`)
-                } else {
-                    
-                }
-            }
-        }
-
-        
+            inputcluster(cluster_key)
+            // for (var i =0 ; i<showartists.length; i++){
+            //     if (showartists[i].S == inputvalue2){
+            //         var detail1 = songinfo.append("div")
+            //         detail1.text(`Artist: ${showartists[i].S}`)
+            //         artists_key = i
+            //         var detail2 = songinfo.append("div")
+            //         detail2.text(`This song is in Cluster ${data.Item.Assignments.L[i].N}`)
+            //     } else {   
+            //     };   
+            // }
+            
+        } 
     })
+    
 };
+
+function inputcluster(cluster_key){
+    d3.json(clusterurl+cluster_key).then(function(cluster){
+        console.log(cluster)
+        var clusterinfo = d3.select(".clusterinfo")
+        clusterinfo.html("")
+        // var clusterappend=clusterinfo.append("ul")
+        cluster.forEach((c) => {
+            clusterinfo.append("h5").text(c.name)
+        })
+    })
+}
+
 
 function runEnter(){
     d3.event.preventDefault();
@@ -99,6 +102,8 @@ function runEnter(){
     input(inputvalue, inputvalue2)
 
 };
+
+
 
 
 
