@@ -186,3 +186,15 @@ border-radius: 4px;
 box-shadow: 0 10px 20px -5px rgba(255, 117, 117, 0.86);
 z-index: 125;
 }
+
+
+
+
+/* For border around Tableau graph */
+
+.jumbotron {
+  padding: 1rem 1rem;
+  margin-bottom: 2rem;
+  background-color: white;
+  border-radius: 1rem;  
+  }

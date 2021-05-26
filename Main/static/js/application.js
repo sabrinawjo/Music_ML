@@ -13,8 +13,8 @@ function initViz() {
  vizDiv = document.getElementById('myViz');
  vizURL = 'https://public.tableau.com/views/Genre_Bubble/Dashboard1'
  options = {
-    height: '800px',
-    width: '1024px',
+    height: '830px',
+    width: '1000px',
     hideToolbar: true,
     hideTabs: true
 };
