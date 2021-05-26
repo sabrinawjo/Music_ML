@@ -47,28 +47,30 @@ function input(inputvalue, inputvalue2){
         var showartists = data.Item.artists.L
         if (inputvalue2===""){
             var artistlist = songinfo.append("div")
-            artistlist.text("It seems like below artist(s) have this song, select one you want to see?").style("font-size","20px")
+            artistlist.text("It seems like below artist(s) have this song, select one you want to see?").style("font-size","20px").style("font-weight","bold")
             for (var s=0; s<showartists.length; s++){
                 var artistlist = songinfo.append("div")
                 artistlist.text(showartists[s].S)
             };
         } else {
 
-        songappend.text(`Search name: ${data.Item.name.S}`);
+        songappend.text(`Search name: ${data.Item.name.S}`).style("font-size","20px").style("font-weight","bold");
             
         for (var i =0 ; i<showartists.length; i++){
             if (showartists[i].S == inputvalue2){
                     var detail1 = songinfo.append("div")
-                    detail1.text(`Artist: ${showartists[i].S}`)
+                    detail1.text(`Artist: ${showartists[i].S}`).style("font-size","20px").style("font-weight","bold")
+                    var detail2 = songinfo.append("div")
+                    detail2.text(`This song is in Cluster ${data.Item.Assignments.L[i].N}`).style("font-size","20px").style("font-weight","bold")
+                    cluster_key = data.Item.Assignments.L[i].N
+                    show(data.Item.Assignments.L[i].N)
                     break
             } else {   
             };   
         };
 
-        var detail2 = songinfo.append("div")
-        detail2.text(`This song is in Cluster ${data.Item.Assignments.L[0].N}`)
-        cluster_key = data.Item.Assignments.L[0].N
-        show(data.Item.Assignments.L[0].N)
+        
+        
         inputcluster(cluster_key)
             
         } 
@@ -81,11 +83,19 @@ function inputcluster(cluster_key){
         console.log(cluster)
         var clusterinfo = d3.select(".clusterinfo")
         clusterinfo.html("")
-        clusterinfo.text("There are 10 songs that we recommend in the same cluster: ").style("font-size","20px")
+        clusterinfo.text("There are 10 songs that we recommend in the same cluster: ").style("font-size","20px").style("font-weight","bold")
         // var clusterappend=clusterinfo.append("ul")
         cluster.forEach((c) => {
             clusterinfo.append("h6").text(c.name)
+            var recommend = c.artists
+            recommend = recommend.replace(/[\[\]']+/g,'')
+            // console.log(recommend)
+            var space = "\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0"
+            clusterinfo.append("h6").text(`${space}----By: ${recommend}`)
         })
+        // var clusterinfo = d3.select("tbody")
+        // clusterinfo.html("")
+        // clusterinfo.text("There are 10 songs that we recommend in the same cluster: ").style("font-size","20px")
     })
 }
 
