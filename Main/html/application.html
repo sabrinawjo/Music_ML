@@ -64,7 +64,11 @@
 <body>
 	<header class="masthead">
 		<div class="container px-4 px-lg-5 h-100" ><br>
-			<h2 class="text-white font-weight-bold">Song Recommendations <br> &emsp; &emsp; &emsp; &ensp; based on attributes</h2>
+			<h7 class="text-white font-weight-bold">To use our k-means cluster model, input the song name and artist for which you want to search. <br>
+				Our website application will return the following:<br>
+				&ensp; &ensp;1. The cluster number assigned to the song<br>
+				&ensp; &ensp;2. A list of sample tracks in the same cluster<br>
+				&ensp; &ensp;3. A visual representation of the most common genres in that cluster.<br></h7>
 		<div class="row gx-4  h-100 align-items-center justify-content-center text-center>">
 			<div class="col-lg-8 align-self-end">
 				<!-- <h1 class="text-white font-weight-bold align-self-center">Machine Learning</h1> -->
@@ -72,10 +76,16 @@
 			</div>
 		</div>
 		<div class="col-lg-8 align-self-baseline">
+			<h7 class="text-white font-weight-bold">Note: Be as specific as possible in your query. Include special characters if present.
+				 <br> &emsp; &emsp; &emsp; &ensp; </h7>
 			<!-- <p class="text-white-75 mb-5">Our kmeans clusters are based on attributes of songs. Once we have 10 clusters divided up and analyzed, we know what genres tend to describe the clusters. Then, after running songs w/o genre through the trained clustering, if no genre songs' attributes have enough in common with established cluster...</p> -->
 		</div>
 		</div>
-
+		
+		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	
+		
+		<h2 class="text-white font-weight-bold">&emsp; Song Recommendations <br> &emsp; &emsp; &emsp; &ensp; based on attributes</h2>
 	</header>
 
 	<div class="container">
@@ -84,37 +94,20 @@
 		  <!-- <div class="col-md-4"> -->
 			<!-- <div class = "col align-self-center"> -->
 			<aside class="filters">
-			  <!-- <div class="panel panel-default">
-				<div class="panel-heading">-></div>
-				<div class="panel-body">
-				  <form>
-					<div class="form-group">
-					  <ul class="list-group" id="filters">
-						<li class="filter list-group-item">
-						  <label for="date">Enter the name of song</label>
-						  <input class="form-control" id="songinput" type="text" placeholder="Ave Maria">
-						</li>
-					  </ul>
-					</div>
-					<button id="filter-btn" type="button" class="btn btn-default">Filter Table</button>
-				  </form>
-				  <div class="songinfo">
-					  
-				  </div>
-				</div> -->
 				<div id="cover">
 					<form method="get" action="">
-					  <div class="tb">
-						<div class="td"><input id="songinput" class="form-control" type="text" placeholder="Search song's name" required></div>
-						<div class="td"><input id="artistinput" class="form-control" type="text" placeholder="Tell me which artist" required></div>
-						<div class="td" id="s-cover">
-						  <button type="submit" id="filter-btn">
-							<div id="s-circle"></div>
-							<span></span>
-						  </button>
-						</div>
+					    <div class="tb">
+							<div class="td"><input id="songinput" class="form-control" type="text" placeholder="Search song's name" required></div>
+							<div class="td"><input id="artistinput" class="form-control" type="text" placeholder="Tell me which artist" required></div>
+							<div class="td" id="s-cover">
+						  		<button type="submit" id="filter-btn">
+								<div id="s-circle"></div>
+								<span></span>
+						  		</button>
+							</div>
 					  	</div>
 					</form>
+				
 					<!-- <form method="get" action="">
 						<div class="tb">
 						  <div class="td"><input id="artistinput" class="form-control" type="text" placeholder="Ave Maria" required></div>
@@ -135,7 +128,7 @@
 				<div class="clusterinfo">
 				</div>
 
-			  </div>
+
 			</aside>
 		<!-- </div> -->
 		  <!-- </div> -->
@@ -179,7 +172,7 @@
 		  
 		  
 		  
-				  <select id="selDataset1" class="form-select" aria-label="Default select example">
+				  <!-- <select id="selDataset1" class="form-select" aria-label="Default select example">
 					  <option onclick="show('0')">Cluster 0</option>
 					  <option onclick="show('1')">Cluster 1</option>
 					  <option onclick="show('2')">Cluster 2</option>
@@ -190,7 +183,7 @@
 					  <option onclick="show('7')">Cluster 7</option>
 					  <option onclick="show('8')">Cluster 8</option>
 					  <option onclick="show('9')">Cluster 9</option>
-					</select>
+					</select> -->
 		  
 		  
 		  

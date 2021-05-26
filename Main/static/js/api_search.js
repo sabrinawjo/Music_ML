@@ -85,9 +85,10 @@ function inputcluster(cluster_key){
         console.log(cluster)
         var clusterinfo = d3.select(".clusterinfo")
         clusterinfo.html("")
+        clusterinfo.text("There are 10 songs that we recommend in the same cluster: ").style("font-size","20px")
         // var clusterappend=clusterinfo.append("ul")
         cluster.forEach((c) => {
-            clusterinfo.append("h5").text(c.name)
+            clusterinfo.append("h6").text(c.name)
         })
     })
 }
