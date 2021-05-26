@@ -107,13 +107,12 @@
 						</p> -->
 						<br>
 						<h2 class="display-6">Getting the optimal number of clusters</h2>
-						<p class="lead"> After going through and cleaning the data, we needed to figure out how many clusters would have been the best for the amount of attributes we were using. To do this, we used the Elbow Method. 
-							We determined that our dataset could be described in 10 clusters using the 
-							<a href= "https://en.wikipedia.org/wiki/Elbow_method_(clustering)">Elbow Method</a> 
-							 (guide on implementation 
-							<a href = "https://www.geeksforgeeks.org/elbow-method-for-optimal-value-of-k-in-kmeans/">here</a>
-								) to estimate how to effectively break the data into clusters, as shown below:
-							Alex, take it away, bc I don't know how to describe this so you can make this your section. :)
+						<p class="lead"> One of the most important steps in training a k-means model is determining the optimal amount of clusters to use for analyzing your data. 
+							K-means clustering requires that the user specify how many clusters (k) be generated in the model; however, the answer to this question 
+							may be subjective and typically does not have a true definitive number.
+							By looping through and testing a range of cluster numbers (k), the amount of distortion (average euclidean squared distance from centroid of the respective clusters) can be evaluated. 
+							One should choose the number of clusters where adding another cluster would not decrease the distortion by a significant degree. In our model, we determined the optimal number between 
+							8-10 clusters. Considering the large amount of tracks in our datasets, 10 was chosen to give higher complexity and variety in our analysis.
 						</p>
 						<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
 							<div class="carousel-inner">
