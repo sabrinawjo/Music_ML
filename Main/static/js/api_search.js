@@ -54,26 +54,22 @@ function input(inputvalue, inputvalue2){
             };
         } else {
 
-            songappend.text(`Search name: ${data.Item.name.S}`);
+        songappend.text(`Search name: ${data.Item.name.S}`);
             
-            var detail1 = songinfo.append("div")
-            detail1.text(`Artist: ${showartists[0].S}`)
-            var detail2 = songinfo.append("div")
-            detail2.text(`This song is in Cluster ${data.Item.Assignments.L[0].N}`)
-            cluster_key = data.Item.Assignments.L[0].N
-            show(data.Item.Assignments.L[0].N)
+        for (var i =0 ; i<showartists.length; i++){
+            if (showartists[i].S == inputvalue2){
+                    var detail1 = songinfo.append("div")
+                    detail1.text(`Artist: ${showartists[i].S}`)
+                    break
+            } else {   
+            };   
+        };
 
-            inputcluster(cluster_key)
-            // for (var i =0 ; i<showartists.length; i++){
-            //     if (showartists[i].S == inputvalue2){
-            //         var detail1 = songinfo.append("div")
-            //         detail1.text(`Artist: ${showartists[i].S}`)
-            //         artists_key = i
-            //         var detail2 = songinfo.append("div")
-            //         detail2.text(`This song is in Cluster ${data.Item.Assignments.L[i].N}`)
-            //     } else {   
-            //     };   
-            // }
+        var detail2 = songinfo.append("div")
+        detail2.text(`This song is in Cluster ${data.Item.Assignments.L[0].N}`)
+        cluster_key = data.Item.Assignments.L[0].N
+        show(data.Item.Assignments.L[0].N)
+        inputcluster(cluster_key)
             
         } 
     })

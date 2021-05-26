@@ -56,14 +56,16 @@ function input(inputvalue, inputvalue2){
 
             songappend.text(`Search name: ${data.Item.name.S}`);
             
-            var detail1 = songinfo.append("div")
-            detail1.text(`Artist: ${showartists[0].S}`)
-            var detail2 = songinfo.append("div")
-            detail2.text(`This song is in Cluster ${data.Item.Assignments.L[0].N}`)
-            cluster_key = data.Item.Assignments.L[0].N
-            show(data.Item.Assignments.L[0].N)
+            
+            // var detail1 = songinfo.append("div")
+            // detail1.text(`Artist: ${showartists[0].S}`)
+            // var detail2 = songinfo.append("div")
+            // detail2.text(`This song is in Cluster ${data.Item.Assignments.L[0].N}`)
+            // cluster_key = data.Item.Assignments.L[0].N
+            // show(data.Item.Assignments.L[0].N)
 
-            inputcluster(cluster_key)
+            // inputcluster(cluster_key)
+
             // for (var i =0 ; i<showartists.length; i++){
             //     if (showartists[i].S == inputvalue2){
             //         var detail1 = songinfo.append("div")
@@ -75,6 +77,22 @@ function input(inputvalue, inputvalue2){
             //     };   
             // }
             
+            for (var i =0 ; i<showartists.length; i++){
+                if (showartists[i].S == inputvalue2){
+                    var detail1 = songinfo.append("div")
+                    detail1.text(`Artist: ${showartists[i].S}`)
+                    break
+                } else {   
+                };   
+            }
+
+            var detail2 = songinfo.append("div")
+            detail2.text(`This song is in Cluster ${data.Item.Assignments.L[0].N}`)
+            cluster_key = data.Item.Assignments.L[0].N
+            show(data.Item.Assignments.L[0].N)
+            inputcluster(cluster_key)
+
+
         } 
     })
     
