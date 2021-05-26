@@ -102,9 +102,16 @@
 						<p class="lead">
 						</p>
 						<br>
-						<!-- <h2 class="display-6">The cleaning process</h2>
-						<p class="lead"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit minima totam amet! Cumque eligendi et expedita ex libero, excepturi dicta nemo dolores natus assumenda nam quasi. Omnis sed unde error.
-						</p> -->
+						<h2 class="display-6">The cleaning process</h2>
+						<p class="lead"> The Spotify dataset we had originally wasn't exactly clean. The first issue was the scaling. In order to prepare the dataset to be used 
+							in the machine learning model, we would need all the attributes to be measured 
+							on a homogenous scale. After scaling all the attributes from a scale of 0 to 1, we needed to explode our tracks DataFrame, merge in order to obtain genres, and then 
+							implode the DataFrames to get rid of duplicate values. Then the data would be prepped for the AzureML segment.
+						</p>
+						<p class="lead">
+							Once the model's output has been evaluated and saved, we would clean the data further, grouping the data by tracks and their id in order to query recommended songs and cluster results, 
+							then by cluster assignment for further analysis, as will be mentioned again in the Cluster Visuals segment.
+						</p>
 						<br>
 						<h2 class="display-6">Getting the optimal number of clusters</h2>
 						<p class="lead"> One of the most important steps in training a k-means model is determining the optimal amount of clusters to use for analyzing your data. 
