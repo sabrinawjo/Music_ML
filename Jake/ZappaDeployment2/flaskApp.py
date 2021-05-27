@@ -48,6 +48,7 @@ def homepage():
     f"/api/v2.0/Music_ML_tracks/&lt;track&gt; <br/>"
     f"/api/v2.1/Music_ML_tracks/&lt;track&gt; <br/>"
     f"/api/v2.1/Fixed_Song_Assignments/&lt;Assignments&gt; <br/>"
+    f"/api/v2.1/Random_Song_Assignments/&lt;Assignments&gt; <br/>"
     # f"/api/v2.1/Music_ML_Assignment_Name/A=&lt;Assignment&gt;&amp;N=&lt;Name&gt; <br/>"
   )
 
@@ -211,6 +212,19 @@ def data_assignments_fixed(Assignments):
   dataAssignmentsFixed = json.dumps([dict(r) for r in dataAssignmentsFixed])
 
   return dataAssignmentsFixed
+
+@app.route("/api/v2.1/Random_Song_Assignments/<Assignments>")
+def data_assignments_random(Assignments):
+  Assignments = Assignments
+  session=Session(bind=engine)  
+  dataAssignmentsRandom = engine.execute(f'SELECT * from songAssignments_randomTable \
+    WHERE Assignments = {int(Assignments)} \
+    ORDER BY RANDOM() \
+    LIMIT 10')
+  session.close()
+  dataAssignmentsRandomJSON = json.dumps([dict(r) for r in dataAssignmentsRandom])
+
+  return dataAssignmentsRandomJSON
 
 if __name__ == '__main__':
     app.run(debug=True)
