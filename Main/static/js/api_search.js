@@ -42,6 +42,8 @@ function input(inputvalue, inputvalue2){
         var songinfo=d3.select(".songinfo")
         // var songinfo=d3.select("#songinput")
         songinfo.html("")
+        var clusterinfo = d3.select(".clusterinfo")
+        clusterinfo.html("")
         var songappend=songinfo.append("div")
 
         var showartists = data.Item.artists.L
