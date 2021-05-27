@@ -20,7 +20,7 @@ Table of Contents
   - [Our Team](#our-team)
 
 ## Repository Organization
-Files used for the final deployment of our project are saved in the Main folder.  Additional files in separate folders may have been used to aid our development of the application.
+Files used for the final deployment of our project are saved in the Main folder.  Additional files in separate folders may have been used to aid our development of the application.  Files for the API deployment are saved [here.](Jake/ZappaDeployment2/)
 
 ## Previous Project Work
 This project is based on work done in the [Musical Attribute Analysis Project](https://github.com/alexdanieldelcampo/Musical_Analysis), which takes a dataset of Spotify music data summarized by year, genre, and artist and presents visualizations of the data.
@@ -93,14 +93,39 @@ The main API routes include:
 - Tracks with ML cluster assignments, artists, and genre lists -  [/api/v2.0/Music_ML_tracks/&lt;track&gt;](https://nxvasw6as4.execute-api.us-west-1.amazonaws.com/dev/api/v2.0/Music_ML_tracks/All%20Star)
   - Returns a JSON object that contains the ML cluster assignment ("Assignments"), a list of artists that have made a song with this title ("artists"), a list of genre lists for each artist ("genres"), and a list of Spotify track IDs ("id") for a given track name.
   - When adding the track name at the end of the URL (replace "&lt;track&gt;" with the track name), please use the correct spelling, punctuation, capitalization, and spacing.  Note any accents or special characters.  Some tracks may have very specific names (Beyoncé sings "[Crazy in Love (feat. Jay-Z)](https://nxvasw6as4.execute-api.us-west-1.amazonaws.com/dev/api/v2.0/Music_ML_tracks/Crazy%20in%20Love%20(feat.%20Jay-Z))", not to be confused with "[Crazy in Love](https://nxvasw6as4.execute-api.us-west-1.amazonaws.com/dev/api/v2.0/Music_ML_tracks/Crazy%20in%20Love)").
+- Sets of Ten Tracks by Assignments
+  - Returns a set of ten tracks with artist, song id, and ML assignment cluster.  "Fixed"  "Random" .
+	- Fixed (returns a fixed set of tracks for each assignment number): [/api/v2.1/Fixed_Song_Assignments/&lt;Assignments&gt;](https://nxvasw6as4.execute-api.us-west-1.amazonaws.com/dev/api/v2.1/Fixed_Song_Assignments/0)
+	- Random (returns a random set of 10 tracks and related data from the specified cluster number): [/api/v2.1/Random_Song_Assignments/&lt;Assignments&gt;](https://nxvasw6as4.execute-api.us-west-1.amazonaws.com/dev/api/v2.1/Random_Song_Assignments/0)
+
 
 ## ML Visualizations
 
-Visualizations are built with Tableau and present the average values of the song attributes and the top genre labels in each cluster.  
+Visualizations are built with Tableau and present the average values of the song attributes and the top genre labels in each cluster.
+![](Main/static/TreeMap_chart.png)
+![](Main/static/Cluster0_genres.png)  
 
 ## Observations
+The K-Means clustering does a great job of handling tracks that include a lot of spoken word/speech, as shown by the groupings into Cluster 5.  These tracks appear to be from audiobooks or radio plays and are consistenly labeled as having a high speech content, low instrumental content.  Clusters 7 and 9 are grouped nicely; these clusters include instrumental pieces with low valence (sadder songs, Cluster 7) and instrumental pieces with higher valence (happier songs, Cluster 9).  Cluster 7 includes orchestra and opera genres, while Cluster 9 includes the more upbeat swing, jazz, and big band genres.
+
+The clustering is not perfect, especially when looking at randomly generated tracks that are within a given cluster.  Using the song discovery application sometimes results in confusing and humorous recommendations!  
 
 ## Potential Evolution
 
+Going forward, we would like to incorporate an embedded Spotify player to queue up the tracks that are suggested at random into a playlist so the user can listen to the songs for themselves.  
+
 ## Our Team
+
+[alexdanieldelcampo](https://github.com/alexdanieldelcampo/)
+
+[DavidZapataCSUF](https://github.com/DavidZapataCSUF)
+
+[jakemperry](https://github.com/jakemperry)
+
+[sabrinawjo](https://github.com/sabrinawjo)
+
+[ytran010](https://github.com/ytran010)
+
+
+
 
