@@ -1,6 +1,6 @@
 
   .active {
-    font-weight: bold;
+    /* font-weight: bold; */
     fill: rgb(14, 13, 13);
     transition: fill 0.3s ease-out;
     text-anchor: left;

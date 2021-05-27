@@ -1,6 +1,6 @@
 # Music Analysis with ML
 
-This project uses machine learning to find common attributes in tracks from Spotify, beyond their artists or genre, and presents the results through interactive visualizations.
+This project uses machine learning to find common attributes in tracks from Spotify, beyond their artists or genre, and presents the results through interactive visualizations.  Our project has incorporated machine learning to suggest related songs using K-Means clustering.  Our project is hosted online here: [Musical Attribute Analysis (with ML)](https://ue6hni7n44.execute-api.us-west-1.amazonaws.com/dev/index.html)
 
 Table of Contents
 - [Music Analysis with ML](#music-analysis-with-ml)
@@ -15,6 +15,7 @@ Table of Contents
     - [v1.0/](#v10)
     - [v2.0/](#v20)
   - [ML Visualizations](#ml-visualizations)
+  - [Song Recommendation Application](#song-recommendation-application)
   - [Observations](#observations)
   - [Potential Evolution](#potential-evolution)
   - [Our Team](#our-team)
@@ -87,7 +88,7 @@ The main API routes include:
 
 ### v2.0/
 
-This version of the API was constructed by creating JSONs of the data for each table which were uploaded to AWS DynamoDB.  Queries are handled in Python using boto3.
+This version of the API was constructed by creating JSONs of the data for each table which were uploaded to AWS DynamoDB.  Sets of random tracks handled in SQLite.  Queries are handled in Python using boto3 for AWS DynamoDB and using SQLAlchemy for SQLite database queries.
 
 The main API routes include:
 - Tracks with ML cluster assignments, artists, and genre lists -  [/api/v2.0/Music_ML_tracks/&lt;track&gt;](https://nxvasw6as4.execute-api.us-west-1.amazonaws.com/dev/api/v2.0/Music_ML_tracks/All%20Star)
@@ -104,6 +105,10 @@ The main API routes include:
 Visualizations are built with Tableau and present the average values of the song attributes and the top genre labels in each cluster.
 ![](Main/static/TreeMap_chart.png)
 ![](Main/static/Cluster0_genres.png)  
+
+## Song Recommendation Application
+
+Using the API v2.0 above, our application can be used to search for a song by name and artist to return the ML cluster assignment for that song and a list of randomly selected songs from the same ML cluster as suggested related tracks.  If you aren't sure which artist wrote the version of the song you're thinking of, you can search for just the song title and a list of artists will appear who have made a song with that name.  If you have the name and artist filled out, you can continue clicking submit to generate a new list of suggested songs.  When the song is found via the API, a bubble chart of the popular cluster genres will appear below the list of songs.
 
 ## Observations
 The K-Means clustering does a great job of handling tracks that include a lot of spoken word/speech, as shown by the groupings into Cluster 5.  These tracks appear to be from audiobooks or radio plays and are consistenly labeled as having a high speech content, low instrumental content.  Clusters 7 and 9 are grouped nicely; these clusters include instrumental pieces with low valence (sadder songs, Cluster 7) and instrumental pieces with higher valence (happier songs, Cluster 9).  Cluster 7 includes orchestra and opera genres, while Cluster 9 includes the more upbeat swing, jazz, and big band genres.
