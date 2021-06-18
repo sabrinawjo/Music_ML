@@ -1,4 +1,4 @@
-url = "https://nxvasw6as4.execute-api.us-west-1.amazonaws.com/dev/api/v2.0/Music_ML_tracks/";
+url = "https://nxvasw6as4.execute-api.us-west-1.amazonaws.com/dev/api/v2.1/Music_ML_tracks/";
 clusterurl = "https://nxvasw6as4.execute-api.us-west-1.amazonaws.com/dev/api/v2.1/Random_Song_Assignments/"
 // path = "../../Resources/MLResources/full_Imploded.json"
 
@@ -64,6 +64,20 @@ function input(inputvalue, inputvalue2){
                     detail1.text(`Artist: ${showartists[i].S}`).style("font-size","20px").style("font-weight","bold")
                     var detail2 = songinfo.append("div")
                     detail2.text(`This song is in Cluster ${data.Item.Assignments.L[i].N}`).style("font-size","20px").style("font-weight","bold")
+                    
+                    var songinfoSpotify = d3.select("#search-spotify")
+                    // var iframe = d3.createElement('iframe');
+                    // iframe.src = "https://open.spotify.com/embed/track/"+ data.Item.id.L[i].S;
+                    // iframe.width= "300";
+                    // iframe.height="80";
+                    // iframe.frameborder= "0";
+                    // iframe.allowtransparency="true";
+                    // iframe.allow="encrypted-media";
+                    // songinfoSpotify.append(iframe);
+                    // console.log(iframe)
+
+                    var sample = songinfoSpotify.append('text')
+                    sample.text('<iframe src="https://open.spotify.com/embed/track/7GFxray2pxG2i4UM7kn0Xx" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>')
                     cluster_key = data.Item.Assignments.L[i].N
                     show(data.Item.Assignments.L[i].N)
                     break
