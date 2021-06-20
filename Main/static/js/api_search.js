@@ -95,9 +95,9 @@ function input(inputvalue, inputvalue2){
         } else {
 
         songappend.text(`Search name: ${data.Item.name.S}`).style("font-size","20px").style("font-weight","bold");
-
-        var track = data.Item.id.L[0].S
-        iframe(track)
+        console.log(data.Item)
+        // var track = data.Item.id.L[0].S
+        // iframe(track)
             
         for (var i =0 ; i<showartists.length; i++){
             if (showartists[i].S == inputvalue2){
@@ -117,10 +117,12 @@ function input(inputvalue, inputvalue2){
                     // songinfoSpotify.append(iframe);
                     // console.log(iframe)
 
-                    var sample = songinfoSpotify.append('text')
-                    sample.text('<iframe src="https://open.spotify.com/embed/track/7GFxray2pxG2i4UM7kn0Xx" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>')
+                    // var sample = songinfoSpotify.append('text')
+                    // sample.text('<iframe src="https://open.spotify.com/embed/track/7GFxray2pxG2i4UM7kn0Xx" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>')
                     cluster_key = data.Item.Assignments.L[i].N
                     show(data.Item.Assignments.L[i].N)
+                    var track = data.Item.id.L[i].S
+                    iframe(track)
                     break
             } else {   
             };   
