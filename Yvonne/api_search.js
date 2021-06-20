@@ -37,52 +37,22 @@ function iframe2(track){
     }).appendTo(".spotifysample");
 }
 
-// function runEnter(){
-//     d3.event.preventDefault();
-//     var inputelement = d3.select("#songinput")
-//     var song=inputelement.property("value")
-//     console.log(song)
-
-//     var inputvalue = "Karel Gott"
-
-//     d3.json(url+song).then(function(data){
-//         console.log(data.Item.name)
-//         var songinfo=d3.select(".songinfo")
-//         songinfo.html("")
-//         var songappend=songinfo.append("div")
-//         songappend.text(data.Item.name.S)
-//         var filterdata = data.Item.artists.L
-//         for (var i =0 ; i<filterdata.length; i++){
-//             if (filterdata[i].S == inputvalue){
-//                 console.log(filterdata[i].S)
-//                 artists_key = i
-//                 console.log(data.Item.Assignments.L[i].N)
-//                 console.log(data.Item.genres.L[i].L)
-//             } else {
-                
-//             }
-
-//         }
-//     })
-// }
-
 function input(inputvalue, inputvalue2){
     d3.json(url+inputvalue).then(function(data){
         // console.log(data.Item.name)
         var songinfo=d3.select(".songinfo")
         // var songinfo=d3.select("#songinput")
         songinfo.html("")
-
         var spotifysearch = d3.select("#search-spotify")
         spotifysearch.html("")
 
         var clusterinfo = d3.select(".clusterinfo")
         clusterinfo.html("")
 
-        var songappend=songinfo.append("div")
-
         var spotifysample=d3.select(".spotifysample")
         spotifysample.html("")
+
+        var songappend=songinfo.append("div")
 
         var showartists = data.Item.artists.L
         if (inputvalue2===""){
@@ -95,32 +65,25 @@ function input(inputvalue, inputvalue2){
         } else {
 
         songappend.text(`Search name: ${data.Item.name.S}`).style("font-size","20px").style("font-weight","bold");
-
         var track = data.Item.id.L[0].S
         iframe(track)
-            
+
+        // console.log(data.Item.id.L[0].S)
+
         for (var i =0 ; i<showartists.length; i++){
             if (showartists[i].S == inputvalue2){
                     var detail1 = songinfo.append("div")
                     detail1.text(`Artist: ${showartists[i].S}`).style("font-size","20px").style("font-weight","bold")
                     var detail2 = songinfo.append("div")
                     detail2.text(`This song is in Cluster ${data.Item.Assignments.L[i].N}`).style("font-size","20px").style("font-weight","bold")
-                    
-                    var songinfoSpotify = d3.select("#search-spotify")
-                    // var iframe = d3.createElement('iframe');
-                    // iframe.src = "https://open.spotify.com/embed/track/"+ data.Item.id.L[i].S;
-                    // iframe.width= "300";
-                    // iframe.height="80";
-                    // iframe.frameborder= "0";
-                    // iframe.allowtransparency="true";
-                    // iframe.allow="encrypted-media";
-                    // songinfoSpotify.append(iframe);
-                    // console.log(iframe)
-
-                    var sample = songinfoSpotify.append('text')
-                    sample.text('<iframe src="https://open.spotify.com/embed/track/7GFxray2pxG2i4UM7kn0Xx" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>')
+                    // var track = data.Item.id.L[i].S
+                    // var sample = songinfoSpotify.append('text')
+                    // sample.text('<iframe src="https://open.spotify.com/embed/track/7GFxray2pxG2i4UM7kn0Xx" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>')
                     cluster_key = data.Item.Assignments.L[i].N
                     show(data.Item.Assignments.L[i].N)
+                    // console.log(data)
+                    
+                    // iframe(track)
                     break
             } else {   
             };   
@@ -137,10 +100,18 @@ function input(inputvalue, inputvalue2){
 
 function inputcluster(cluster_key){
     d3.json(clusterurl+cluster_key).then(function(cluster){
-        console.log(cluster)
+        // console.log(cluster)
         var clusterinfo = d3.select(".clusterinfo")
         clusterinfo.html("")
         clusterinfo.text("There are 10 songs that we recommend in the same cluster: ").style("font-size","20px").style("font-weight","bold")
+
+        var spotifysample=d3.select(".spotifysample")
+        spotifysample.html("")
+        // var space = "\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0"
+        // spotifysample.text(`SONG SAMPLES`)
+
+
+
         // var clusterappend=clusterinfo.append("ul")
         cluster.forEach((c) => {
             clusterinfo.append("h6").text(c.name)
@@ -149,9 +120,10 @@ function inputcluster(cluster_key){
             // console.log(recommend)
             var space = "\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0"
             clusterinfo.append("h6").text(`${space}----By: ${recommend}`)
-
+            // document.write('<br />');
+            // console.log(c.id)
+            // spotifysample.append("h6").text(<br></br>)
             clusterinfo.append("h6").text(`${space}`)
-            
             var track = c.id
             iframe2(track)
         })
@@ -160,7 +132,6 @@ function inputcluster(cluster_key){
         // clusterinfo.text("There are 10 songs that we recommend in the same cluster: ").style("font-size","20px")
     })
 }
-
 
 function runEnter(){
     d3.event.preventDefault();
