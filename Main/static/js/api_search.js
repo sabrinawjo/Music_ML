@@ -34,7 +34,10 @@ function iframe2(track){
         frameborder: "0",
         allowtransparency: "true",
         allow: "encrypted-media"
-    }).appendTo(".spotifysample");
+    }).appendTo(".spotifysample")
+    $('<br>')
+    $('<br>').appendTo('.spotifysample');
+
 }
 
 // function runEnter(){
@@ -142,7 +145,9 @@ function inputcluster(cluster_key){
         console.log(cluster)
         var clusterinfo = d3.select(".clusterinfo")
         clusterinfo.html("")
-        clusterinfo.text("There are 10 songs that we recommend in the same cluster: ").style("font-size","20px").style("font-weight","bold")
+        var recText = d3.select(".recommend-text")
+        recText.html("")
+        recText.text("There are 10 songs that we recommend in the same cluster: ").style("font-size","20px").style("font-weight","bold")
         // var clusterappend=clusterinfo.append("ul")
         cluster.forEach((c) => {
             clusterinfo.append("h6").text(c.name)
@@ -152,10 +157,12 @@ function inputcluster(cluster_key){
             var space = "\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0"
             clusterinfo.append("h6").text(`${space}----By: ${recommend}`)
 
-            clusterinfo.append("h6").text(`${space}`)
+            clusterinfo.append("h4").text(`${space}`)
             
             var track = c.id
             iframe2(track)
+            // spotifysample.append("h6").text(`${space}`)
+            
         })
         // var clusterinfo = d3.select("tbody")
         // clusterinfo.html("")
